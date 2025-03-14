@@ -7,4 +7,9 @@ public class Cotxe extends Vehicle{
         super(matricula, marca, model, preuBase, motor, rodes, etiquetaAmbiental);
         this.nombrePlaces = nombrePlaces;
     }
+
+    @Override
+    public double calcularPreu(int dies) {
+        return 0;
+    }
 }
