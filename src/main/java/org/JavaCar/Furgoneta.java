@@ -7,4 +7,9 @@ public class Furgoneta extends Vehicle {
         super(matricula, marca, model, preuBase, motor, rodes, etiquetaAmbiental);
         this.capacitatCarga = capacitatCarga;
     }
+
+    @Override
+    public double calcularPreu(int dies) {
+        return 0;
+    }
 }
