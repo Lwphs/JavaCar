@@ -1,5 +1,4 @@
 package org.JavaCar;
 
-public class Cotxe {
-
+public class Moto {
 }
