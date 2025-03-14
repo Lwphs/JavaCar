@@ -5,11 +5,11 @@ public abstract class Vehicle implements Llogable {
     String marca;
     String model;
     double preuBase;
-    String motor;
-    int rodes;
+    Motor motor;
+    Roda rodes;
     String etiquetaAmbiental;
 
-    public Vehicle(String matricula, String marca, String model, double preuBase, String motor, int rodes, String etiquetaAmbiental) {
+    public Vehicle(String matricula, String marca, String model, double preuBase, Motor motor, Roda rodes, String etiquetaAmbiental) {
         this.matricula = matricula;
         this.marca = marca;
         this.model = model;
@@ -35,11 +35,11 @@ public abstract class Vehicle implements Llogable {
         return preuBase;
     }
 
-    public String getMotor() {
+    public Motor getMotor() {
         return motor;
     }
 
-    public int getRodes() {
+    public Roda getRodes() {
         return rodes;
     }
 
