@@ -14,6 +14,6 @@ public class Cotxe extends Vehicle{
 
     @Override
     public double calcularPreu(int dies) {
-        return 0;
+        return preuBase * dies;
     }
 }

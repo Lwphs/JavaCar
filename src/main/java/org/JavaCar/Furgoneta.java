@@ -10,7 +10,10 @@ public class Furgoneta extends Vehicle {
 
     @Override
     public double calcularPreu(int dies) {
-        return 0;
+        if (capacitatCarga > 1000)
+            return dies * (preuBase + 10);
+        else
+            return dies * preuBase;
     }
 
     public double getCapacitatCarga() {
