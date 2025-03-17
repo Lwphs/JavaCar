@@ -23,4 +23,7 @@ public class Moto extends Vehicle{
             return dies * preuBase;
     }
 
+
+
+
 }

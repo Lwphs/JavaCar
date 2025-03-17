@@ -1,6 +1,7 @@
 package org.JavaCar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Vehicle implements Llogable {
@@ -64,10 +65,22 @@ public abstract class Vehicle implements Llogable {
         List<Vehicle> vehiclesDisponibles = new ArrayList<>();
 
         for (int i = 0; i < vehicles.size(); i++) {
-            if (isLlogat()){
+            if (!isLlogat())
                 vehiclesDisponibles.add(vehicles.get(i));
-            }
         }
         return vehiclesDisponibles;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "matricula='" + matricula + '\'' +
+                ", marca='" + marca + '\'' +
+                ", model='" + model + '\'' +
+                ", preuBase=" + preuBase +
+                ", motor=" + motor +
+                ", rodes=" + Arrays.toString(rodes) +
+                ", etiquetaAmbiental='" + etiquetaAmbiental + '\'' +
+                '}';
     }
 }
