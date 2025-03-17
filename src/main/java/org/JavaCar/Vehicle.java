@@ -1,5 +1,8 @@
 package org.JavaCar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Vehicle implements Llogable {
     protected String matricula;
     protected String marca;
@@ -8,6 +11,7 @@ public abstract class Vehicle implements Llogable {
     protected Motor motor;
     protected Roda[] rodes;
     protected String etiquetaAmbiental;
+    protected boolean llogat = false;
 
     public Vehicle(String matricula, String marca, String model, double preuBase, Motor motor, Roda[] rodes) {
         this.matricula = matricula;
@@ -44,5 +48,26 @@ public abstract class Vehicle implements Llogable {
 
     public String getEtiquetaAmbiental() {
         return etiquetaAmbiental;
+    }
+
+    public boolean isLlogat() {
+        return llogat;
+    }
+
+    public void setLlogat(boolean llogat) {
+        this.llogat = llogat;
+    }
+
+    @Override
+    public List<Vehicle> ensenyarLlogable(List<Vehicle> vehicles) {
+
+        List<Vehicle> vehiclesDisponibles = new ArrayList<>();
+
+        for (int i = 0; i < vehicles.size(); i++) {
+            if (isLlogat()){
+                vehiclesDisponibles.add(vehicles.get(i));
+            }
+        }
+        return vehiclesDisponibles;
     }
 }

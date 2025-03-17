@@ -1,5 +1,8 @@
 package org.JavaCar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cotxe extends Vehicle{
     private int nombrePlaces;
 
@@ -16,4 +19,5 @@ public class Cotxe extends Vehicle{
     public double calcularPreu(int dies) {
         return preuBase * dies;
     }
+
 }
