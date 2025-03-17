@@ -9,6 +9,11 @@ public abstract class Vehicle implements Llogable {
     protected Roda[] rodes;
     protected String etiquetaAmbiental;
 
+    //etiqueta Ambiental
+    protected int anyFabricacio;
+    protected boolean enxufable;
+
+
     public Vehicle(String matricula, String marca, String model, double preuBase, Motor motor, Roda[] rodes) {
         this.matricula = matricula;
         this.marca = marca;
