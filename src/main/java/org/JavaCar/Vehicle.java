@@ -7,11 +7,7 @@ public abstract class Vehicle implements Llogable {
     protected double preuBase;
     protected Motor motor;
     protected Roda[] rodes;
-    protected EtiquetaAmbiental etiquetaAmbiental;
-
-    //etiqueta Ambiental
-    protected int anyFabricacio;
-
+    protected String etiquetaAmbiental;
 
     public Vehicle(String matricula, String marca, String model, double preuBase, Motor motor, Roda[] rodes) {
         this.matricula = matricula;
@@ -46,21 +42,7 @@ public abstract class Vehicle implements Llogable {
         return rodes;
     }
 
-    public void setEtiquetaAmbiental(EtiquetaAmbiental etiquetaAmbiental) {
-        this.etiquetaAmbiental = calcularEtiqueta();
-    }
-
-    private EtiquetaAmbiental calcularEtiqueta() {
-        if (anyFabricacio < 2000) return EtiquetaAmbiental.SenseDistintiu;
-        if (anyFabricacio > 2000 && anyFabricacio <= 2005) return EtiquetaAmbiental.B;
-        if (anyFabricacio > 2005 && anyFabricacio <= 2015) return EtiquetaAmbiental.C;
-        if (motor.getTipus().equalsIgnoreCase("Hibrid") || motor.getTipus().equals("Gas")) return EtiquetaAmbiental.ECO;
-        if (motor.getTipus().equalsIgnoreCase("Electric") || motor.getTipus().equalsIgnoreCase("Elèctric")) return EtiquetaAmbiental.ZeroEmisions;
-
-        return EtiquetaAmbiental.SenseDistintiu;
-    }
-
-    public EtiquetaAmbiental getEtiquetaAmbiental() {
+    public String getEtiquetaAmbiental() {
         return etiquetaAmbiental;
     }
 }

@@ -16,4 +16,11 @@ public class Motor {
     public int getPotencia() {
         return potencia;
     }
+    @Override
+    public String toString() {
+        return "Motor{" +
+                "tipus='" + tipus + '\'' +
+                ", potencia=" + potencia +
+                '}';
+    }
 }
