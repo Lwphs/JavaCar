@@ -23,7 +23,10 @@ public class Moto extends Vehicle{
             return dies * preuBase;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Moto{" +
+                "cilindrada=" + cilindrada +
+                '}';
+    }
 }
