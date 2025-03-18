@@ -1,5 +1,6 @@
 package org.JavaCar;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Moto extends Vehicle{
@@ -25,8 +26,13 @@ public class Moto extends Vehicle{
 
     @Override
     public String toString() {
-        return "Moto{" +
-                "cilindrada=" + cilindrada +
-                '}';
+        return "Moto --> " +
+                "matricula: " + matricula + '\'' +
+                ", marca: " + marca + '\'' +
+                ", model: " + model + '\'' +
+                ", preuBase: " + preuBase +
+                ", motor: " + motor +
+                ", rodes: " + Arrays.toString(rodes) +
+                ", etiquetaAmbiental: " + etiquetaAmbiental;
     }
 }

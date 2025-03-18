@@ -18,9 +18,9 @@ public class Roda {
     }
     @Override
     public String toString() {
-        return "Roda{" +
-                "marca='" + marca + '\'' +
-                ", diametre=" + diametre +
-                '}';
+        return "Roda: (" +
+                "marca: " + marca + '\'' +
+                ", diametre:" + diametre +
+                ')';
     }
 }

@@ -1,6 +1,7 @@
 package org.JavaCar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Cotxe extends Vehicle{
@@ -20,4 +21,15 @@ public class Cotxe extends Vehicle{
         return preuBase * dies;
     }
 
+    @Override
+    public String toString() {
+        return "Cotxe --> " +
+                "matricula: " + matricula + '\'' +
+                ", marca: " + marca + '\'' +
+                ", model: " + model + '\'' +
+                ", preuBase: " + preuBase +
+                ", motor: " + motor +
+                ", rodes: " + Arrays.toString(rodes) +
+                ", etiquetaAmbiental: " + etiquetaAmbiental;
+    }
 }

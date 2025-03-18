@@ -14,17 +14,11 @@ public class Main {
         Motor motorMoto = new Motor("Diesel", 80);
 
 
-        Moto moto1 = new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe);
-        Cotxe cotxe1 = new Cotxe("5678DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto);
-
-        llistaVehicles.add(moto1);
-        llistaVehicles.add(cotxe1);
+        llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Cotxe("5678DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
 
         for (int i = 0; i < llistaVehicles.size(); i++) {
             System.out.println(llistaVehicles.get(i));
         }
-
-
-
     }
 }

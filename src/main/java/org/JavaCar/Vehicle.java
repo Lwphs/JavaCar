@@ -92,14 +92,13 @@ public abstract class Vehicle implements Llogable {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "matricula='" + matricula + '\'' +
-                ", marca='" + marca + '\'' +
-                ", model='" + model + '\'' +
-                ", preuBase=" + preuBase +
-                ", motor=" + motor +
-                ", rodes=" + Arrays.toString(rodes) +
-                ", etiquetaAmbiental=" + etiquetaAmbiental +
-                '}';
+        return "Vehicle --> " +
+                "matricula: " + matricula + '\'' +
+                ", marca: " + marca + '\'' +
+                ", model: " + model + '\'' +
+                ", preuBase: " + preuBase +
+                ", motor: " + motor +
+                ", rodes: " + Arrays.toString(rodes) +
+                ", etiquetaAmbiental: " + etiquetaAmbiental;
     }
 }

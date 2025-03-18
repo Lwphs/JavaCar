@@ -18,9 +18,8 @@ public class Motor {
     }
     @Override
     public String toString() {
-        return "Motor{" +
-                "tipus='" + tipus + '\'' +
-                ", potencia=" + potencia +
-                '}';
+        return "Motor: (" +
+                "tipus: " + tipus + '\'' +
+                ", potencia: " + potencia + ")";
     }
 }

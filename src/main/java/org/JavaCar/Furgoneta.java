@@ -1,5 +1,6 @@
 package org.JavaCar;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Furgoneta extends Vehicle {
@@ -20,5 +21,17 @@ public class Furgoneta extends Vehicle {
 
     public double getCapacitatCarga() {
         return capacitatCarga;
+    }
+
+    @Override
+    public String toString() {
+        return "Furgoneta --> " +
+                "matricula: " + matricula + '\'' +
+                ", marca: " + marca + '\'' +
+                ", model: " + model + '\'' +
+                ", preuBase: " + preuBase +
+                ", motor: " + motor +
+                ", rodes: " + Arrays.toString(rodes) +
+                ", etiquetaAmbiental: " + etiquetaAmbiental;
     }
 }
