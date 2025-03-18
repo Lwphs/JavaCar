@@ -30,6 +30,8 @@ public class Cotxe extends Vehicle{
                 ", preuBase: " + preuBase +
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
-                ", etiquetaAmbiental: " + etiquetaAmbiental;
+                ", etiquetaAmbiental: " + etiquetaAmbiental +
+                ", llogat: " + llogat +
+                ", any de Fabricació: " + anyFabricacio;
     }
 }

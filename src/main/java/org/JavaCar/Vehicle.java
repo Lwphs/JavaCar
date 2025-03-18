@@ -87,6 +87,8 @@ public abstract class Vehicle implements Llogable {
                 ", preuBase: " + preuBase +
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
-                ", etiquetaAmbiental: " + etiquetaAmbiental;
+                ", etiquetaAmbiental: " + etiquetaAmbiental +
+                ", llogat: " + llogat +
+                ", any de Fabricació: " + anyFabricacio;
     }
 }
