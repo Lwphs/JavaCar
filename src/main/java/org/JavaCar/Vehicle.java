@@ -29,6 +29,34 @@ public abstract class Vehicle implements Llogable {
         this.etiquetaAmbiental = calcularEtiqueta();
     }
 
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setPreuBase(double preuBase) {
+        this.preuBase = preuBase;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
+    public void setRodes(Roda[] rodes) {
+        this.rodes = rodes;
+    }
+
+    public void setAnyFabricacio(int anyFabricacio) {
+        this.anyFabricacio = anyFabricacio;
+    }
+
     public String getMatricula() {
         return matricula;
     }
@@ -69,7 +97,7 @@ public abstract class Vehicle implements Llogable {
         return etiquetaAmbiental;
     }
 
-    private EtiquetaAmbiental calcularEtiqueta() {
+    public EtiquetaAmbiental calcularEtiqueta() {
         if (anyFabricacio < 2000) return EtiquetaAmbiental.SenseDistintiu;
         if (anyFabricacio > 2000 && anyFabricacio <= 2005) return EtiquetaAmbiental.B;
         if (anyFabricacio > 2005 && anyFabricacio <= 2015) return EtiquetaAmbiental.C;
@@ -82,12 +110,14 @@ public abstract class Vehicle implements Llogable {
     @Override
     public String toString() {
         return "Vehicle --> " +
-                "matricula: " + matricula + '\'' +
-                ", marca: " + marca + '\'' +
-                ", model: " + model + '\'' +
+                "matricula: " + matricula +
+                ", marca: " + marca +
+                ", model: " + model  +
                 ", preuBase: " + preuBase +
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
-                ", etiquetaAmbiental: " + etiquetaAmbiental;
+                ", etiquetaAmbiental: " + etiquetaAmbiental +
+                ", llogat: " + llogat +
+                ", any de Fabricació: " + anyFabricacio;
     }
 }
