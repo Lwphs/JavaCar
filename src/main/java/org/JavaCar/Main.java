@@ -29,6 +29,32 @@ public class Main {
         }
     }
 
+    public static void alquilarVehicle() {
+        int opcio;
+
+        GestorLloguers.llistaVehiclesPerAlquilar();
+        opcio = Main.comprovarInput();
+
+        if (!llistaVehicles.get(opcio).isLlogat()) {
+            llistaVehicles.get(opcio).setLlogat(true);
+            System.out.println("El vehículo ha sido alquilado con éxito.");
+        } else {
+            System.out.println("El vehículo ya está alquilado.");
+        }
+    }
+
+    public static void retornarVehicle() {
+        int opcio;
+
+        System.out.println("Selecciona quin vehicle vols tornar.");
+        GestorLloguers.vehiclesLlogats();
+
+        opcio = Main.comprovarInput();
+        if (llistaVehicles.get(opcio).isLlogat()){
+            llistaVehicles.get(opcio).setLlogat(false);
+        }
+    }
+
     static double calculIngresos() {
         System.out.println("Quants dies s'han fet servir els cotxes?");
         int dies = input.nextInt();
@@ -44,9 +70,5 @@ public class Main {
             input.next();
         }
         return option;
-    }
-
-    private static void retornarVehicle() {
-        System.out.println("Qui vol retornar el vehicle?");
     }
 }

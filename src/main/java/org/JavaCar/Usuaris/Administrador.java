@@ -7,10 +7,8 @@ public class Administrador extends Usuari {
         System.out.println("""
                 Has escollit Administrador.
                 1 - Calcular Ingressos Totals.
-                2 - Administrar vehicles llogats.
+                2 - Administrar vehicles.
                 3 - Enrere.
-                4 - Modificar vehicle.
-                5 - Afegir vehicle.
-                6 - Descatalogar vehicle.""");
+                """);
     }
 }

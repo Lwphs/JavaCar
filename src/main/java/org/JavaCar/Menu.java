@@ -2,7 +2,6 @@ package org.JavaCar;
 import org.JavaCar.Usuaris.Administrador;
 import org.JavaCar.Usuaris.Client;
 import org.JavaCar.Usuaris.Usuari;
-
 import static org.JavaCar.GestorLloguers.llistaVehicles;
 
 public class Menu {
@@ -45,31 +44,61 @@ public class Menu {
                         llistaVehicles.get(1).setLlogat(true);
                         llistaVehicles.get(6).setLlogat(true);
 
-
-                        GestorLloguers.alquilarVehicle();
+                        Main.alquilarVehicle();
                         System.out.println();
                         System.out.println();
                         GestorLloguers.vehiclesLlogats();
+                        Main.alquilarVehicle();
                     }
                     else System.out.println(Main.calculIngresos());
                     break;
                 case 2:
-                    if (option == 2) GestorLloguers.retornarVehicle();
-                    else GestorLloguers.vehiclesLlogats();
+                    if (option == 2) Main.retornarVehicle();
+                    else menuVehicles();
                     break;
                 case 3:
                     System.out.println();
                     break;
-                case 4:
-                    Main.modificarVehicle();
-                    break;
                 default:
-                    System.out.println("""
-                    Si us plau introdueix una de les opcions anteriors.
-                    """);
+                    System.out.println("Si us plau, introdueix una de les opcions anteriors.\n");
                     break;
             }
         } while (suboption != 3);
+    }
+
+    private static void menuVehicles() {
+        int suboption;
+
+        do {
+            System.out.println("""
+                    1 - Mostrar tots els vehicles.
+                    2 - Afegir un vehicle.
+                    3 - Modificar un vehicle.
+                    4 - Descatalogar un vehicle.
+                    5 - Enrere.
+                    """);
+            suboption = Main.comprovarInput();
+
+            switch (suboption) {
+                case 1:
+                    GestorLloguers.mostraVehicles();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    Main.modificarVehicle();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    System.out.println();
+                    break;
+                default:
+                    System.out.println("Si us plau, introdueix una de les opcions anteriors.\n");
+                    break;
+            }
+        } while (suboption != 5);
     }
 
     private static void selectorMenus(int option) {

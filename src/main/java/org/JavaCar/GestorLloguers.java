@@ -1,13 +1,9 @@
 package org.JavaCar;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class GestorLloguers {
-
-    final public static Scanner input = new Scanner(System.in);
     public static ArrayList<Vehicle> llistaVehicles = new ArrayList<>();
-
 
     public static double calcularIngressosTotals(List<Vehicle> vehicles, int dies){
         double total = 0;
@@ -37,41 +33,15 @@ public class GestorLloguers {
         llistaVehicles.add(new Moto("9999XYZ", "Ducati", "Panigale V2", 27, 280, motorMoto, rodesMoto));
         llistaVehicles.add(new Cotxe("7777JKL", "Volkswagen", "Golf", 26, 5, motorCotxe, rodesCotxe));
         llistaVehicles.add(new Moto("5555MNO", "Kawasaki", "Ninja 650", 24, 290, motorMoto, rodesMoto));
-
-    }
-
-    public static void alquilarVehicle() {
-        int opcio;
-        llistaVehiclesPerAlquilar();
-
-        opcio = Main.comprovarInput();
-
-        if (!llistaVehicles.get(opcio).isLlogat()) {
-            llistaVehicles.get(opcio).setLlogat(true);
-            System.out.println("El vehículo ha sido alquilado con éxito.");
-        } else {
-            System.out.println("El vehículo ya está alquilado.");
-        }
-
-
-    }
-
-    public static void retornarVehicle() {
-        int opcio;
-        vehiclesLlogats();
-
-        opcio = Main.comprovarInput();
-        if (llistaVehicles.get(opcio).isLlogat()){
-            llistaVehicles.get(opcio).setLlogat(false);
-        }
     }
 
     public static void llistaVehiclesPerAlquilar() {
         System.out.println("Selecciona quin vehicle vols alquilar");
         int i = 0;
+
         for (Vehicle vehicle : llistaVehicles) {
+            i++;
             if (!vehicle.isLlogat()) {
-                i++;
                 System.out.println(i + " " + vehicle);
             }
         }
@@ -79,11 +49,18 @@ public class GestorLloguers {
 
     public static void vehiclesLlogats() {
         int i = 0;
+
         for (Vehicle vehicle : llistaVehicles) {
+            i++;
             if (vehicle.isLlogat()) {
-                i++;
                 System.out.println(i + " " + vehicle);
             }
+        }
+    }
+
+    public static void mostraVehicles() {
+        for (Vehicle vehicle : llistaVehicles) {
+            System.out.println(vehicle);
         }
     }
 }
