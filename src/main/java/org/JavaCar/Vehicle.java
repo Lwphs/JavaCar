@@ -78,18 +78,6 @@ public abstract class Vehicle implements Llogable {
         return EtiquetaAmbiental.SenseDistintiu;
     }
 
-//    @Override
-//    public List<Vehicle> ensenyarLlogable(List<Vehicle> vehicles) {
-//        List<Vehicle> vehiclesDisponibles = new ArrayList<>();
-//
-//        for (int i = 0; i < vehicles.size(); i++) {
-//            if (!isLlogat())
-//                vehiclesDisponibles.add(vehicles.get(i));
-//        }
-//        return vehiclesDisponibles;
-//    }
-
-
     @Override
     public String toString() {
         return "Vehicle --> " +
