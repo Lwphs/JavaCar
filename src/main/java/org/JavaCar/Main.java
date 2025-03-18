@@ -185,7 +185,7 @@ private static void selectorMenus(int option) {
     if (option == 2) client.imprimirMenu();
 }
 
-private static int comprovarInput() {
+public static int comprovarInput() {
     int option = 0;
     try {
         option = input.nextInt();
