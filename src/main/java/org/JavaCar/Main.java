@@ -98,7 +98,7 @@ public class Main {
             i++;
             System.out.println(i + " - " + vehicle);
         }
-        Vehicle vehicleModificar = llistaVehicles.get(comprovarInput());
+        Vehicle vehicleModificar = llistaVehicles.get(comprovarInput() - 1);
 
         menuModificar(vehicleModificar);
     }
@@ -106,7 +106,8 @@ public class Main {
     private static void menuModificar(Vehicle vehicle) {
         int suboption;
 
-        System.out.println("""
+        do {
+            System.out.println("""
                 Què vols modificar?
                 1 - Matrícula
                 2 - Marca
@@ -114,14 +115,17 @@ public class Main {
                 4 - Preu base
                 5 - Motor
                 6 - Rodes
-                7 - Any de Fabricació""");
-        do {
+                7 - Any de Fabricació
+                8 - Enrere""");
+
             suboption = comprovarInput();
+            input.nextLine();
 
             switch (suboption) {
                 case 1:
                     System.out.println("Si us plau entra el nom de la Matrícula");
-                    vehicle.setMatricula(input.nextLine());
+                    String matricula = input.nextLine();
+                    vehicle.setMatricula(matricula);
                     break;
                 case 2:
                     System.out.println("Si us plau entra el nom de la marca.");
@@ -134,11 +138,11 @@ public class Main {
                 case 4:
                     System.out.println("Si us plau entra un preu base del vehicle.");
                     vehicle.setPreuBase(input.nextInt());
+                    input.nextLine();
                     break;
                 case 5:
                     System.out.print("Si us plau entra el tipus de motor: ");
                     String tipusMotor = input.nextLine();
-                    input.next();
                     System.out.print("Entra la potència: ");
                     int potencia = input.nextInt();
 
@@ -155,22 +159,22 @@ public class Main {
                     Roda roda = new Roda(tipusRodes, diametreRodes);
                     Roda[] rodes;
                     if (vehicle instanceof Moto)
-                        rodes = new Roda[]{new Roda(tipusRodes, diametreRodes), new Roda(tipusRodes, diametreRodes)};
+                        rodes = new Roda[]{roda, roda};
                     else
-                        rodes = new Roda[]{new Roda(tipusRodes, diametreRodes), new Roda(tipusRodes, diametreRodes), new Roda(tipusRodes, diametreRodes), new Roda(tipusRodes, diametreRodes)};
+                        rodes = new Roda[]{roda, roda, roda, roda};
                     vehicle.setRodes(rodes);
                     break;
                 case 7:
                     System.out.print("Si us plau, entra l'any de fabricació: ");
                     vehicle.setAnyFabricacio(input.nextInt());
                 default:
-
                     System.out.println("""
-                    Si us plau introdueix una de les opcions anteriors.
+                    Si us plau introdueix una de les opcions anteriors!!!!
                     """);
                     break;
             }
-        } while (suboption != 3);
+        } while (suboption != 8);
+        vehicle.calcularEtiqueta();
     }
 
 

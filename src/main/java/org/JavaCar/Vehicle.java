@@ -96,7 +96,7 @@ public abstract class Vehicle implements Llogable {
         return etiquetaAmbiental;
     }
 
-    private EtiquetaAmbiental calcularEtiqueta() {
+    public EtiquetaAmbiental calcularEtiqueta() {
         if (anyFabricacio < 2000) return EtiquetaAmbiental.SenseDistintiu;
         if (anyFabricacio > 2000 && anyFabricacio <= 2005) return EtiquetaAmbiental.B;
         if (anyFabricacio > 2005 && anyFabricacio <= 2015) return EtiquetaAmbiental.C;
@@ -109,9 +109,9 @@ public abstract class Vehicle implements Llogable {
     @Override
     public String toString() {
         return "Vehicle --> " +
-                "matricula: " + matricula + '\'' +
-                ", marca: " + marca + '\'' +
-                ", model: " + model + '\'' +
+                "matricula: " + matricula +
+                ", marca: " + marca +
+                ", model: " + model  +
                 ", preuBase: " + preuBase +
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +

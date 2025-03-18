@@ -26,9 +26,9 @@ public class Furgoneta extends Vehicle {
     @Override
     public String toString() {
         return "Furgoneta --> " +
-                "matricula: " + matricula + '\'' +
-                ", marca: " + marca + '\'' +
-                ", model: " + model + '\'' +
+                "matricula: " + matricula +
+                ", marca: " + marca +
+                ", model: " + model +
                 ", preuBase: " + preuBase +
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
