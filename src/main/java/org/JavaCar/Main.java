@@ -1,7 +1,6 @@
 package org.JavaCar;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Vector;
 
 public class Main {
     public static Scanner input = new Scanner(System.in);
@@ -20,6 +19,7 @@ public class Main {
         menuUsuari();
     }
 
+
     private static void menuUsuari() {
         int option;
 
@@ -36,16 +36,28 @@ public class Main {
             switch (option) {
                 case 1:
                     alquilarVehicle();
+                    break;
+                    case 2:
+                        retornarVehicle();
+
+
             }
 
         } while (option != 3);
     }
 
+    private static void retornarVehicle() {
+        System.out.println("Qui vol retornar el vehicle?");
+    }
+
     private static void alquilarVehicle() {
         System.out.println("Selecciona quin vehicle vols alquilar");
-        for (int i = 0; i < llistaVehicles.size(); i++) {
-            if (!llistaVehicles.get(i).isLlogat())
-                System.out.println(llistaVehicles.get(i).toString());;
+        int i = 0;
+        for (Vehicle vehicle : llistaVehicles) {
+            if (!vehicle.isLlogat()) {
+                i++;
+                System.out.println(i + " " + vehicle.toString());
+            }
         }
     }
 }
