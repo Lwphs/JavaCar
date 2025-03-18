@@ -47,9 +47,14 @@ public class GestorLloguers {
 
         opcio = Main.comprovarInput();
 
-        if (!llistaVehicles.get(opcio).isLlogat()){
+        if (!llistaVehicles.get(opcio).isLlogat()) {
             llistaVehicles.get(opcio).setLlogat(true);
+            System.out.println("El vehículo ha sido alquilado con éxito.");
+        } else {
+            System.out.println("El vehículo ya está alquilado.");
         }
+
+
     }
 
     public static void retornarVehicle() {
@@ -62,7 +67,7 @@ public class GestorLloguers {
         }
     }
 
-    private static void llistaVehiclesPerAlquilar() {
+    public static void llistaVehiclesPerAlquilar() {
         System.out.println("Selecciona quin vehicle vols alquilar");
         int i = 0;
         for (Vehicle vehicle : llistaVehicles) {

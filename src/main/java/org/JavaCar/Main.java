@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static org.JavaCar.GestorLloguers.llistaVehicles;
 import static org.JavaCar.GestorLloguers.retornarVehicle;
 
 public class Main {
@@ -53,11 +54,14 @@ public class Main {
 
             switch (suboption) {
                 case 1:
-                    
-                    //GestorLloguers.alquilarVehicle();
-                    //System.out.println();
-                    //System.out.println();
-                    //GestorLloguers.vehiclesLlogats();
+                    llistaVehicles.get(1).setLlogat(true);
+                    llistaVehicles.get(6).setLlogat(true);
+
+
+                    GestorLloguers.alquilarVehicle();
+                    System.out.println();
+                    System.out.println();
+                    GestorLloguers.vehiclesLlogats();
 
                     if (option == 2){
 

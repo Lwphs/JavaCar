@@ -12,7 +12,7 @@ public abstract class Vehicle implements Llogable {
     protected Motor motor;
     protected Roda[] rodes;
     protected EtiquetaAmbiental etiquetaAmbiental;
-    protected static boolean llogat = false;
+    protected boolean llogat = false;
 
 
     //etiqueta Ambiental
@@ -53,13 +53,14 @@ public abstract class Vehicle implements Llogable {
         return rodes;
     }
 
-    public static boolean isLlogat() {
+    public boolean isLlogat() {
         return llogat;
     }
 
     public void setLlogat(boolean llogat) {
         this.llogat = llogat;
     }
+
 
     public void setEtiquetaAmbiental(EtiquetaAmbiental etiquetaAmbiental) {
         this.etiquetaAmbiental = calcularEtiqueta();
