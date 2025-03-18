@@ -79,7 +79,6 @@ public abstract class Vehicle implements Llogable {
 
     @Override
     public List<Vehicle> ensenyarLlogable(List<Vehicle> vehicles) {
-
         List<Vehicle> vehiclesDisponibles = new ArrayList<>();
 
         for (int i = 0; i < vehicles.size(); i++) {
