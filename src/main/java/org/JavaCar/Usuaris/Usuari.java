@@ -1,8 +1,6 @@
 package org.JavaCar.Usuaris;
 
-import org.JavaCar.Menu;
-
-public class Usuari implements Menu {
+public class Usuari  {
     protected String nom;
     protected String cognom;
     protected String telefon;
@@ -17,7 +15,6 @@ public class Usuari implements Menu {
 
     public Usuari() {}
 
-    @Override
     public void imprimirMenu() {
         System.out.println("""
                 Si us plau, indiqueu quin tipus d'usuari sou.

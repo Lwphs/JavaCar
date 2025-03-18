@@ -40,7 +40,6 @@ public class GestorLloguers {
 
     }
 
-
     public static void alquilarVehicle() {
         int opcio;
         llistaVehiclesPerAlquilar();
