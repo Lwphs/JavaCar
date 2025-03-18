@@ -1,4 +1,6 @@
-package org.JavaCar;
+package org.JavaCar.Usuaris;
+import org.JavaCar.Vehicle;
+
 import java.util.ArrayList;
 
 public class Client extends Usuari {
@@ -15,9 +17,8 @@ public class Client extends Usuari {
         System.out.println("""
                 Has escollit Client.
                 1 - Alquilar un vehicle.
-                2 - Filtrar vehicles per preu.
-                3 - Enrere.
-                """);
+                2 - Retornar un vehicle.
+                3 - Enrere.""");
     }
 
 }

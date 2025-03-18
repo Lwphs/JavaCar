@@ -1,4 +1,4 @@
-package org.JavaCar;
+package org.JavaCar.Usuaris;
 
 public class Administrador extends Usuari {
 
@@ -14,7 +14,6 @@ public class Administrador extends Usuari {
                 Has escollit Administrador.
                 1 - Calcular Ingressos Totals.
                 2 - Administrar vehicles llogats.
-                3 - Enrere.
-                """);
+                3 - Enrere.""");
     }
 }

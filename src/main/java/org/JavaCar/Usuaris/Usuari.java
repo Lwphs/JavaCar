@@ -1,6 +1,6 @@
-package org.JavaCar;
+package org.JavaCar.Usuaris;
 
-import java.util.Scanner;
+import org.JavaCar.Menu;
 
 public class Usuari implements Menu {
     protected String nom;
@@ -20,11 +20,9 @@ public class Usuari implements Menu {
     @Override
     public void imprimirMenu() {
         System.out.println("""
-                ---Benvingut a JavaCar!---
                 Si us plau, indiqueu quin tipus d'usuari sou.
                 1 - Administrador
                 2 - Client
-                3 - Sortir
-                """);
+                3 - Sortir""");
     }
 }
