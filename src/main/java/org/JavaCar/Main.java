@@ -3,10 +3,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static Scanner input = new Scanner(System.in);
+    final public static Scanner input = new Scanner(System.in);
+    final static Usuari usuari = new Usuari();
+    final static Client client = new Client();
+    final static Administrador administrador = new Administrador();
+    
     static ArrayList<Vehicle> llistaVehicles = new ArrayList<>();
 
     public static void main(String[] args) {
+        creacioVehicles();
+        usuari.imprimirMenu();
+        client.imprimirMenu();
+    }
+
+    private static void creacioVehicles() {
         Roda[] rodesCotxe = {new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17)};
         Roda[] rodesMoto = {new Roda("Michelin", 17), new Roda("Michelin", 17)};
 
@@ -15,8 +25,14 @@ public class Main {
 
         llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
         llistaVehicles.add(new Cotxe("2222DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
+        llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Cotxe("2222DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
+        llistaVehicles.add(new Moto("1234ABC", "Honda", "CBR500R", 23, 320, motorMoto, rodesMoto));
+        llistaVehicles.add(new Cotxe("3333GHI", "Toyota", "Corolla", 30, 5, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Moto("9999XYZ", "Ducati", "Panigale V2", 27, 280, motorMoto, rodesMoto));
+        llistaVehicles.add(new Cotxe("7777JKL", "Volkswagen", "Golf", 26, 5, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Moto("5555MNO", "Kawasaki", "Ninja 650", 24, 290, motorMoto, rodesMoto));
 
-        menuUsuari();
     }
 
 

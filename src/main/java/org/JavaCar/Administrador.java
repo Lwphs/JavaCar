@@ -6,6 +6,8 @@ public class Administrador extends Usuari {
         super(nom, cognom, telefon, email);
     }
 
+    public Administrador() {}
+
     @Override
     public void imprimirMenu() {
         System.out.println("""

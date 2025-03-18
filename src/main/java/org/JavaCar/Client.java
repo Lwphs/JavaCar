@@ -8,6 +8,8 @@ public class Client extends Usuari {
         super(nom, cognom, telefon, email);
     }
 
+    public Client() {}
+
     @Override
     public void imprimirMenu() {
         System.out.println("""

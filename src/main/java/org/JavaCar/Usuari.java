@@ -15,6 +15,8 @@ public class Usuari implements Menu {
         this.email = email;
     }
 
+    public Usuari() {}
+
     @Override
     public void imprimirMenu() {
         System.out.println("""
