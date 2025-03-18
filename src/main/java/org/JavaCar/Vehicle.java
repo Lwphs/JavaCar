@@ -29,6 +29,34 @@ public abstract class Vehicle implements Llogable {
         this.etiquetaAmbiental = calcularEtiqueta();
     }
 
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setPreuBase(double preuBase) {
+        this.preuBase = preuBase;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
+    public void setRodes(Roda[] rodes) {
+        this.rodes = rodes;
+    }
+
+    public void setAnyFabricacio(int anyFabricacio) {
+        this.anyFabricacio = anyFabricacio;
+    }
+
     public String getMatricula() {
         return matricula;
     }
