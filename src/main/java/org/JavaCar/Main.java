@@ -7,37 +7,21 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static org.JavaCar.GestorLloguers.retornarVehicle;
+
 public class Main {
     final public static Scanner input = new Scanner(System.in);
     final static Usuari usuari = new Usuari();
     final static Client client = new Client();
     final static Administrador administrador = new Administrador();
 
-    static ArrayList<Vehicle> llistaVehicles = new ArrayList<>();
 
     public static void main(String[] args) {
-        creacioVehicles();
+        GestorLloguers.creacioVehicles();
         menuUsuari();
     }
 
-    private static void creacioVehicles() {
-        Roda[] rodesCotxe = {new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17)};
-        Roda[] rodesMoto = {new Roda("Michelin", 17), new Roda("Michelin", 17)};
 
-        Motor motorCotxe = new Motor("Gasolina", 120);
-        Motor motorMoto = new Motor("Diesel", 80);
-
-        llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
-        llistaVehicles.add(new Cotxe("2222DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
-        llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
-        llistaVehicles.add(new Cotxe("2222DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
-        llistaVehicles.add(new Moto("1234ABC", "Honda", "CBR500R", 23, 320, motorMoto, rodesMoto));
-        llistaVehicles.add(new Cotxe("3333GHI", "Toyota", "Corolla", 30, 5, motorCotxe, rodesCotxe));
-        llistaVehicles.add(new Moto("9999XYZ", "Ducati", "Panigale V2", 27, 280, motorMoto, rodesMoto));
-        llistaVehicles.add(new Cotxe("7777JKL", "Volkswagen", "Golf", 26, 5, motorCotxe, rodesCotxe));
-        llistaVehicles.add(new Moto("5555MNO", "Kawasaki", "Ninja 650", 24, 290, motorMoto, rodesMoto));
-
-    }
 
     private static void menuUsuari() {
         int option;
@@ -69,12 +53,20 @@ public class Main {
 
             switch (suboption) {
                 case 1:
-                    if (option == 2) alquilarVehicle();
+                    
+                    //GestorLloguers.alquilarVehicle();
+                    //System.out.println();
+                    //System.out.println();
+                    //GestorLloguers.vehiclesLlogats();
+
+                    if (option == 2){
+
+                    }
                     else System.out.println(calculIngresos());
                     break;
                 case 2:
-                    if (option == 2) retornarVehicle();
-                    else vehiclesLlogats();
+                    if (option == 2) GestorLloguers.retornarVehicle();
+                    else GestorLloguers.vehiclesLlogats();
                     break;
                 case 3:
                     System.out.println();
@@ -91,7 +83,7 @@ public class Main {
     private static double calculIngresos() {
         System.out.println("Quants dies s'han fet servir els cotxes?");
         int dies = input.nextInt();
-        return GestorLloguers.calcularIngressosTotals(llistaVehicles, dies);
+        return GestorLloguers.calcularIngressosTotals(GestorLloguers.llistaVehicles, dies);
     }
 
     private static void selectorMenus(int option) {
@@ -99,7 +91,7 @@ public class Main {
         if (option == 2) client.imprimirMenu();
     }
 
-    private static int comprovarInput() {
+    public static int comprovarInput() {
         int option = 0;
         try {
             option = input.nextInt();
@@ -110,32 +102,5 @@ public class Main {
         return option;
     }
 
-    private static void retornarVehicle() {
-        System.out.println("Qui vol retornar el vehicle?");
-    }
 
-    private static void alquilarVehicle() {
-        llistaVehiclesPerAlquilar();
-    }
-
-    private static void llistaVehiclesPerAlquilar() {
-        System.out.println("Selecciona quin vehicle vols alquilar");
-        int i = 0;
-        for (Vehicle vehicle : llistaVehicles) {
-            if (!vehicle.isLlogat()) {
-                i++;
-                System.out.println(i + " " + vehicle);
-            }
-        }
-    }
-
-    private static void vehiclesLlogats() {
-        int i = 0;
-        for (Vehicle vehicle : llistaVehicles) {
-            if (vehicle.isLlogat()) {
-                i++;
-                System.out.println(i + " " + vehicle);
-            }
-        }
-    }
 }
