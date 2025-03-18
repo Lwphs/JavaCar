@@ -87,30 +87,6 @@ public class Main {
         } while (suboption != 3);
     }
 
-
-    private static double calculIngresos() {
-        System.out.println("Quants dies s'han fet servir els cotxes?");
-        int dies = input.nextInt();
-        return GestorLloguers.calcularIngressosTotals(GestorLloguers.llistaVehicles, dies);
-    }
-
-    private static void selectorMenus(int option) {
-        if (option == 1) administrador.imprimirMenu();
-        if (option == 2) client.imprimirMenu();
-    }
-
-    public static int comprovarInput() {
-        int option = 0;
-        try {
-            option = input.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("No has introduit un numero!");
-            input.next();
-        }
-        return option;
-    }
-
-    
     private static void modificarVehicle() {
         int i = 0;
         System.out.println("Selecciona el vehicle que vols modificar.");
