@@ -1,5 +1,4 @@
 package org.JavaCar;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,17 +9,17 @@ public class Furgoneta extends Vehicle {
         super(matricula, marca, model, preuBase, motor, rodes);
         this.capacitatCarga = capacitatCarga;
     }
+    public Furgoneta() {}
+
+    public void setCapacitatCarga(double capacitatCarga) { this.capacitatCarga = capacitatCarga; }
+    public double getCapacitatCarga() {
+        return capacitatCarga;
+    }
 
     @Override
     public double calcularPreu(int dies) {
-        if (capacitatCarga > 1000)
-            return dies * (preuBase + 10);
-        else
-            return dies * preuBase;
-    }
-
-    public double getCapacitatCarga() {
-        return capacitatCarga;
+        if (capacitatCarga > 1000) return dies * (preuBase + 10);
+        else return dies * preuBase;
     }
 
     @Override

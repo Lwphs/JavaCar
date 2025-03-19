@@ -18,7 +18,6 @@ public abstract class Vehicle implements Llogable {
     //etiqueta Ambiental
     protected int anyFabricacio;
 
-
     public Vehicle(String matricula, String marca, String model, double preuBase, Motor motor, Roda[] rodes) {
         this.matricula = matricula;
         this.marca = marca;
@@ -28,6 +27,8 @@ public abstract class Vehicle implements Llogable {
         this.rodes = rodes;
         this.etiquetaAmbiental = calcularEtiqueta();
     }
+
+    public Vehicle() {}
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;

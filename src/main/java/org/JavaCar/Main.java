@@ -12,23 +12,6 @@ public class Main {
         Menu.menuUsuari();
     }
 
-    public static void modificarVehicle() {
-        int i = 0;
-        Vehicle vehicleModificar;
-
-        System.out.println("Selecciona el vehicle que vols modificar.");
-        for (Vehicle vehicle : llistaVehicles) {
-            i++;
-            System.out.println(i + " - " + vehicle);
-        }
-        try {
-            vehicleModificar = llistaVehicles.get(comprovarInput() - 1);
-            Menu.menuModificar(vehicleModificar);
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Va jefe, para de liar-la.\n");
-        }
-    }
-
     public static void alquilarVehicle() {
         int opcio;
 

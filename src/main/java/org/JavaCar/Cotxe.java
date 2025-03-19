@@ -12,6 +12,8 @@ public class Cotxe extends Vehicle{
         this.nombrePlaces = nombrePlaces;
     }
 
+    public Cotxe() {}
+
     public int getNombrePlaces() {
         return nombrePlaces;
     }

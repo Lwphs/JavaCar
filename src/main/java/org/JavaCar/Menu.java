@@ -5,7 +5,6 @@ import org.JavaCar.Usuaris.Usuari;
 import static org.JavaCar.GestorLloguers.llistaVehicles;
 
 public class Menu {
-
     final static Usuari usuari = new Usuari();
     final static Client client = new Client();
     final static Administrador administrador = new Administrador();
@@ -41,12 +40,14 @@ public class Menu {
             switch (suboption) {
                 case 1:
                     if (option == 2){
-
+                        llistaVehicles.get(1).setLlogat(true);
+                        llistaVehicles.get(6).setLlogat(true);
 
                         Main.alquilarVehicle();
                         System.out.println();
                         System.out.println();
                         GestorLloguers.vehiclesLlogats();
+                        Main.alquilarVehicle();
                     }
                     else System.out.println(Main.calculIngresos());
                     break;
@@ -82,11 +83,13 @@ public class Menu {
                     GestorLloguers.mostraVehicles();
                     break;
                 case 2:
+                    Administrador.afegirVehicle();
                     break;
                 case 3:
-                    Main.modificarVehicle();
+                    Administrador.modificarVehicle();
                     break;
                 case 4:
+                    Administrador.eliminarVehicle();
                     break;
                 case 5:
                     System.out.println();
