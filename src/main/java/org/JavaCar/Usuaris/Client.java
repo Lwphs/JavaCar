@@ -10,13 +10,13 @@ public class Client extends Usuari {
         int opcio;
 
         GestorLloguers.llistaVehiclesPerAlquilar();
-        opcio = Main.comprovarInput(0, llistaVehicles.size());
+        opcio = Main.comprovarInput(0, llistaVehicles.size()) - 1;
 
-        if (!llistaVehicles.get(opcio-1).isLlogat()) {
-            llistaVehicles.get(opcio-1).setLlogat(true);
-            System.out.println("El vehículo ha sido alquilado con éxito.");
+        if (!llistaVehicles.get(opcio).isLlogat()) {
+            llistaVehicles.get(opcio).setLlogat(true);
+            System.out.println("Has alquilat " + llistaVehicles.get(opcio));
         } else {
-            System.out.println("El vehículo ya está alquilado.");
+            System.out.println("El vehicle ja està alquilat.");
         }
     }
 
@@ -26,10 +26,10 @@ public class Client extends Usuari {
         System.out.println("Selecciona quin vehicle vols tornar.");
         GestorLloguers.vehiclesLlogats();
 
-        opcio = Main.comprovarInput(0, llistaVehicles.size());
+        opcio = Main.comprovarInput(0, llistaVehicles.size()) - 1;
 
-        if (llistaVehicles.get(opcio-1).isLlogat()){
-            llistaVehicles.get(opcio-1).setLlogat(false);
+        if (llistaVehicles.get(opcio).isLlogat()){
+            llistaVehicles.get(opcio).setLlogat(false);
             System.out.println("Has retornat el vehicle correctament");
         }
         else{

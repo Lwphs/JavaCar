@@ -42,12 +42,8 @@ public class Menu {
             switch (suboption) {
                 case 1:
                     if (option == 2){
-                        llistaVehicles.get(1).setLlogat(true);
-                        llistaVehicles.get(6).setLlogat(true);
-
                         Client.alquilarVehicle();
                         System.out.println();
-                        GestorLloguers.vehiclesLlogats();
                     }
                     else System.out.println(Main.calculIngresos());
                     break;
@@ -70,12 +66,12 @@ public class Menu {
 
         do {
             System.out.println("""
-                    1 - Mostrar tots els vehicles.
+                    \n1 - Mostrar tots els vehicles.
                     2 - Afegir un vehicle.
                     3 - Modificar un vehicle.
                     4 - Descatalogar un vehicle.
-                    5 - Enrere.
-                    """);
+                    5 - Enrere.""");
+            System.out.print("Selecciona una opció: ");
             suboption = Main.comprovarInput(1, 5);
 
             switch (suboption) {

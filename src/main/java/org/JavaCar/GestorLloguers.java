@@ -30,7 +30,7 @@ public class GestorLloguers {
     }
 
     public static void vehiclesLlogats() {
-        int count = 1;
+        int count = 0;
 
         for (Vehicle vehicle : llistaVehicles) {
             count++;

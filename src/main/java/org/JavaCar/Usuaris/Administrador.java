@@ -27,7 +27,6 @@ public class Administrador extends Usuari {
 
     public static void afegirVehicle() {
         Vehicle vehicle = tipusVehicle();
-        Main.input.nextLine();
 
         System.out.println("Si us plau entra el nom de la Matrícula");
         String matricula = Main.input.nextLine();
@@ -77,7 +76,7 @@ public class Administrador extends Usuari {
         System.out.print("Si us plau, entra l'any de fabricació: ");
         vehicle.setAnyFabricacio(Main.input.nextInt());
 
-        vehicle.calcularEtiqueta();
+        vehicle.setEtiquetaAmbiental();
         llistaVehicles.add(vehicle);
     }
 
@@ -92,8 +91,8 @@ public class Administrador extends Usuari {
                 3 - Furgoneta
                 """);
         System.out.print("Quin tipus de vehicle vols afegir? ");
-
         int eleccio = Main.comprovarInput(1,3);
+
         if (eleccio == 1) {
             System.out.println("Has escollit introduir una moto.");
             return moto = new Moto();
@@ -110,7 +109,14 @@ public class Administrador extends Usuari {
         GestorLloguers.mostraVehicles();
         System.out.print("Selecciona quin vehicle vols descatalogar: ");
 
-        llistaVehicles.remove(Main.comprovarInput(0,llistaVehicles.size()) - 1);
+        int descatalogarVehicle = Main.comprovarInput(0,llistaVehicles.size()) - 1;
+
+        if (llistaVehicles.get(descatalogarVehicle).isLlogat())
+            System.out.println("No es pot descatalogar, està llogat!!");
+        else {
+            System.out.println("Has descatalogat " + llistaVehicles.get(descatalogarVehicle));
+            llistaVehicles.remove(descatalogarVehicle);
+        }
     }
 
     @Override
