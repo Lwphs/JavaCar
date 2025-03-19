@@ -47,7 +47,6 @@ public class GestorLloguers {
             i ++;
             System.out.println(i + " - " + vehicle);
         }
-        System.out.println();
     }
 }
 

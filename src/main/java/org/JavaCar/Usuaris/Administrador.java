@@ -12,11 +12,12 @@ public class Administrador extends Usuari {
         int i = 0;
         Vehicle vehicleModificar;
 
-        System.out.println("Selecciona el vehicle que vols modificar.");
         for (Vehicle vehicle : llistaVehicles) {
             i++;
             System.out.println(i + " - " + vehicle);
         }
+        System.out.print("Selecciona el vehicle que vols modificar: ");
+
         try {
             vehicleModificar = llistaVehicles.get(Main.comprovarInput(0,llistaVehicles.size()) - 1);
             Menu.menuModificar(vehicleModificar);
@@ -28,21 +29,21 @@ public class Administrador extends Usuari {
     public static void afegirVehicle() {
         Vehicle vehicle = tipusVehicle();
 
-        System.out.println("Si us plau entra el nom de la Matrícula");
+        System.out.print("Si us plau, entra el nom de la Matrícula: ");
         String matricula = Main.input.nextLine();
         vehicle.setMatricula(matricula);
 
-        System.out.println("Si us plau entra el nom de la marca.");
+        System.out.print("Entra el nom de la marca: ");
         vehicle.setMarca(Main.input.nextLine());
 
-        System.out.println("Si us plau entra el nom del model");
-
+        System.out.print("Entra el nom del model: ");
         vehicle.setModel(Main.input.nextLine());
-        System.out.println("Si us plau entra un preu base del vehicle.");
+
+        System.out.print("Si us plau, entra el preu base del vehicle: ");
         vehicle.setPreuBase(Main.input.nextInt());
         Main.input.nextLine();
 
-        System.out.print("Si us plau entra el tipus de motor: ");
+        System.out.print("Entra el tipus de motor: ");
         String tipusMotor = Main.input.nextLine();
         System.out.print("Entra la potència: ");
         int potencia = Main.input.nextInt();
@@ -93,16 +94,20 @@ public class Administrador extends Usuari {
         System.out.print("Quin tipus de vehicle vols afegir? ");
         int eleccio = Main.comprovarInput(1,3);
 
-        if (eleccio == 1) {
-            System.out.println("Has escollit introduir una moto.");
-            return moto = new Moto();
-        } else if (eleccio == 2) {
-            System.out.println("Has escollit introduir un cotxe.");
-            return cotxe = new Cotxe();
-        } else {
-            System.out.println("Has escollit introduir una furgoneta.");
-            return furgoneta = new Furgoneta();
-        }
+        return switch (eleccio) {
+            case 1 -> {
+                System.out.println("Has escollit introduir una moto.");
+                yield moto = new Moto();
+            }
+            case 2 -> {
+                System.out.println("Has escollit introduir un cotxe.");
+                yield cotxe = new Cotxe();
+            }
+            default -> {
+                System.out.println("Has escollit introduir una furgoneta.");
+                yield furgoneta = new Furgoneta();
+            }
+        };
     }
 
     public static void eliminarVehicle() {

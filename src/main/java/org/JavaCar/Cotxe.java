@@ -19,7 +19,7 @@ public class Cotxe extends Vehicle{
 
     @Override
     public String toString() {
-        return "Cotxe --> " +
+        return "Cotxe (llogat: " + llogat + ") --> " +
                 "matricula: " + matricula +
                 ", marca: " + marca +
                 ", model: " + model +
@@ -28,7 +28,6 @@ public class Cotxe extends Vehicle{
                 ", rodes: " + Arrays.toString(rodes) +
                 ", nombre de places: " + nombrePlaces +
                 ", etiquetaAmbiental: " + etiquetaAmbiental +
-                ", llogat: " + llogat +
                 ", any de Fabricació: " + anyFabricacio;
     }
 }

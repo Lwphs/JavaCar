@@ -105,7 +105,7 @@ public abstract class Vehicle implements Llogable {
 
     @Override
     public String toString() {
-        return "Vehicle --> " +
+        return "Vehicle (llogat: " + llogat + ") --> " +
                 "matricula: " + matricula +
                 ", marca: " + marca +
                 ", model: " + model  +
@@ -113,7 +113,6 @@ public abstract class Vehicle implements Llogable {
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
                 ", etiquetaAmbiental: " + etiquetaAmbiental +
-                ", llogat: " + llogat +
                 ", any de Fabricació: " + anyFabricacio;
     }
 }

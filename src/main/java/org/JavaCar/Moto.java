@@ -24,7 +24,7 @@ public class Moto extends Vehicle{
 
     @Override
     public String toString() {
-        return "Moto --> " +
+        return "Moto (llogat: " + llogat + ") --> " +
                 "matricula: " + matricula  +
                 ", marca: " + marca +
                 ", model: " + model +
@@ -32,7 +32,6 @@ public class Moto extends Vehicle{
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
                 ", etiquetaAmbiental: " + etiquetaAmbiental +
-                ", llogat: " + llogat +
                 ", any de Fabricació: " + anyFabricacio;
     }
 }

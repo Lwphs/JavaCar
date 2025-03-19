@@ -23,7 +23,7 @@ public class Furgoneta extends Vehicle {
 
     @Override
     public String toString() {
-        return "Furgoneta --> " +
+        return "Furgoneta (llogat: " + llogat + ") --> " +
                 "matricula: " + matricula +
                 ", marca: " + marca +
                 ", model: " + model +
@@ -31,7 +31,6 @@ public class Furgoneta extends Vehicle {
                 ", motor: " + motor +
                 ", rodes: " + Arrays.toString(rodes) +
                 ", etiquetaAmbiental: " + etiquetaAmbiental +
-                ", llogat: " + llogat +
                 ", any de Fabricació: " + anyFabricacio;
     }
 }

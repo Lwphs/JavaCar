@@ -2,7 +2,6 @@ package org.JavaCar;
 import org.JavaCar.Usuaris.Administrador;
 import org.JavaCar.Usuaris.Client;
 import org.JavaCar.Usuaris.Usuari;
-import static org.JavaCar.GestorLloguers.llistaVehicles;
 
 public class Menu {
     final static Usuari usuari = new Usuari();
@@ -107,7 +106,6 @@ public class Menu {
 
         do {
             System.out.println("""
-                Què vols modificar?
                 1 - Matrícula
                 2 - Marca
                 3 - Model
@@ -117,30 +115,33 @@ public class Menu {
                 7 - Any de Fabricació
                 8 - Enrere""");
 
+            System.out.print("Què vols modificar? ");
             suboption = Main.comprovarInput(1, 8);
-            Main.input.nextLine();
 
             switch (suboption) {
                 case 1:
-                    System.out.println("Si us plau entra el nom de la Matrícula");
+                    Main.input.nextLine();
+                    System.out.print("Si us plau, entra el nom de la Matrícula: ");
                     String matricula = Main.input.nextLine();
                     vehicle.setMatricula(matricula);
                     break;
                 case 2:
-                    System.out.println("Si us plau entra el nom de la marca.");
+                    Main.input.nextLine();
+                    System.out.print("Si us plau, entra el nom de la marca: ");
                     vehicle.setMarca(Main.input.nextLine());
                     break;
                 case 3:
-                    System.out.println("Si us plau entra el nom del model");
+                    Main.input.nextLine();
+                    System.out.print("Si us plau, entra el nom del model: ");
                     vehicle.setModel(Main.input.nextLine());
                     break;
                 case 4:
-                    System.out.println("Si us plau entra un preu base del vehicle.");
+                    System.out.print("Si us plau, entra un preu base del vehicle: ");
                     vehicle.setPreuBase(Main.input.nextInt());
-                    Main.input.nextLine();
                     break;
                 case 5:
-                    System.out.print("Si us plau entra el tipus de motor: ");
+                    Main.input.nextLine();
+                    System.out.print("Si us plau, entra el tipus de motor: ");
                     String tipusMotor = Main.input.nextLine();
                     System.out.print("Entra la potència: ");
                     int potencia = Main.input.nextInt();
@@ -149,6 +150,7 @@ public class Menu {
                     vehicle.setMotor(motor);
                     break;
                 case 6:
+                    Main.input.nextLine();
                     System.out.print("Si us plau, entra el tipus de rodes: ");
                     String tipusRodes = Main.input.nextLine();
                     Main.input.next();
@@ -166,13 +168,17 @@ public class Menu {
                 case 7:
                     System.out.print("Si us plau, entra l'any de fabricació: ");
                     vehicle.setAnyFabricacio(Main.input.nextInt());
+                    break;
+                case 8:
+                    break;
                 default:
                     System.out.println("""
                     Si us plau introdueix una de les opcions anteriors!!!!
                     """);
                     break;
             }
+            System.out.println("S'han aplicat els canvis.");
+            vehicle.setEtiquetaAmbiental();
         } while (suboption != 8);
-        vehicle.calcularEtiqueta();
     }
 }
