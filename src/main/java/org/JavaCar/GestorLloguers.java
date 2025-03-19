@@ -45,7 +45,7 @@ public class GestorLloguers {
         for (Vehicle vehicle : llistaVehicles) {
             i++;
             if (!vehicle.isLlogat()) {
-                System.out.println(i + " " + vehicle);
+                System.out.println(i + " - " + vehicle);
             }
         }
     }
@@ -56,16 +56,20 @@ public class GestorLloguers {
         for (Vehicle vehicle : llistaVehicles) {
             if (vehicle.isLlogat()) {
                 count++;
-                System.out.println(count + " " + vehicle);
+                System.out.println(count + " - " + vehicle);
             }
         }
     }
 
 
     public static void mostraVehicles() {
+        int i = 0;
+
         for (Vehicle vehicle : llistaVehicles) {
-            System.out.println(vehicle);
+            i ++;
+            System.out.println(i + " - " + vehicle);
         }
+        System.out.println();
     }
 }
 
