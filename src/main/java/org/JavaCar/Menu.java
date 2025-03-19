@@ -35,6 +35,8 @@ public class Menu {
         int suboption;
         do {
             selectorMenus(option);
+            System.out.print("Selecciona una opció: ");
+
             suboption = Main.comprovarInput();
 
             switch (suboption) {
@@ -43,7 +45,7 @@ public class Menu {
                         llistaVehicles.get(1).setLlogat(true);
                         llistaVehicles.get(6).setLlogat(true);
 
-                        Main.alquilarVehicle();
+                        Client.alquilarVehicle();
                         System.out.println();
                         GestorLloguers.vehiclesLlogats();
 

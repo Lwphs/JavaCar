@@ -9,8 +9,7 @@ public class GestorLloguers {
         double total = 0;
         for (Vehicle element : vehicles){
             total += element.calcularPreu(dies);
-        }
-        return total;
+        } return total;
     }
 
     public static List<Vehicle> filtrarPerPreu(List<Vehicle> vehicles, double preuMax) {
@@ -39,28 +38,27 @@ public class GestorLloguers {
     }
 
     public static void llistaVehiclesPerAlquilar() {
-        System.out.println("Selecciona quin vehicle vols alquilar");
         int i = 0;
+        System.out.println("-------Vehicles disponibles------");
 
         for (Vehicle vehicle : llistaVehicles) {
             i++;
             if (!vehicle.isLlogat()) {
                 System.out.println(i + " - " + vehicle);
             }
-        }
+        } System.out.print("Selecciona quin vehicle vols alquilar: ");
     }
 
     public static void vehiclesLlogats() {
         int count = 1;
 
         for (Vehicle vehicle : llistaVehicles) {
+            count++;
             if (vehicle.isLlogat()) {
-                count++;
                 System.out.println(count + " - " + vehicle);
             }
         }
     }
-
 
     public static void mostraVehicles() {
         int i = 0;

@@ -7,6 +7,7 @@ import static org.JavaCar.GestorLloguers.llistaVehicles;
 
 public class Administrador extends Usuari {
 
+    public Administrador() { super(); }
     public static void modificarVehicle() {
         int i = 0;
         Vehicle vehicleModificar;
@@ -109,7 +110,6 @@ public class Administrador extends Usuari {
                 Has escollit Administrador.
                 1 - Calcular Ingressos Totals.
                 2 - Administrar vehicles.
-                3 - Enrere.
-                """);
+                3 - Enrere.""");
     }
 }

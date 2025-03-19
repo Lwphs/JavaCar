@@ -12,21 +12,6 @@ public class Main {
         Menu.menuUsuari();
     }
 
-    public static void alquilarVehicle() {
-        int opcio;
-
-        GestorLloguers.llistaVehiclesPerAlquilar();
-        System.out.println();
-        opcio = Main.comprovarInput();
-
-        if (!llistaVehicles.get(opcio-1).isLlogat()) {
-            llistaVehicles.get(opcio-1).setLlogat(true);
-            System.out.println("El vehículo ha sido alquilado con éxito.");
-        } else {
-            System.out.println("El vehículo ya está alquilado.");
-        }
-    }
-
     public static void retornarVehicle() {
         int opcio;
 
