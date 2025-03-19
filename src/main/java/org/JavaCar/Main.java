@@ -8,25 +8,11 @@ public class Main {
     final public static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        GestorLloguers.creacioVehicles();
+        creacioVehicles();
         Menu.menuUsuari();
     }
 
-    public static void retornarVehicle() {
-        int opcio;
 
-        System.out.println("Selecciona quin vehicle vols tornar.");
-        GestorLloguers.vehiclesLlogats();
-
-        opcio = Main.comprovarInput();
-        if (llistaVehicles.get(opcio-1).isLlogat()){
-            llistaVehicles.get(opcio-1).setLlogat(false);
-            System.out.println("Has retornat el vehicle correctament");
-        }
-        else{
-            System.out.println("El vehicle no està llogat");
-        }
-    }
 
     static double calculIngresos() {
         System.out.println("Quants dies s'han fet servir els cotxes?");
@@ -43,5 +29,26 @@ public class Main {
             input.next();
         }
         return option;
+    }
+
+    public static void creacioVehicles() {
+        Roda[] rodesCotxe = {new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17)};
+        Roda[] rodesMoto = {new Roda("Michelin", 17), new Roda("Michelin", 17)};
+
+        Motor motorCotxe = new Motor("Gasolina", 120);
+        Motor motorMoto = new Motor("Diesel", 80);
+
+        llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Cotxe("2222DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
+        llistaVehicles.add(new Moto("5678DEF", "Yamaha", "R3", 25, 300, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Cotxe("2222DEF", "Ford", "Focus", 28, 5, motorMoto, rodesMoto));
+        llistaVehicles.add(new Moto("1234ABC", "Honda", "CBR500R", 23, 320, motorMoto, rodesMoto));
+        llistaVehicles.add(new Cotxe("3333GHI", "Toyota", "Corolla", 30, 5, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Moto("9999XYZ", "Ducati", "Panigale V2", 27, 280, motorMoto, rodesMoto));
+        llistaVehicles.add(new Cotxe("7777JKL", "Volkswagen", "Golf", 26, 5, motorCotxe, rodesCotxe));
+        llistaVehicles.add(new Moto("5555MNO", "Kawasaki", "Ninja 650", 24, 290, motorMoto, rodesMoto));
+
+        llistaVehicles.get(1).setLlogat(true);
+        llistaVehicles.get(6).setLlogat(true);
     }
 }
