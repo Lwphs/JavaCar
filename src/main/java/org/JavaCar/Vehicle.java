@@ -1,8 +1,6 @@
 package org.JavaCar;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public abstract class Vehicle implements Llogable {
     protected String matricula;
@@ -91,11 +89,8 @@ public abstract class Vehicle implements Llogable {
     }
 
 
-    public void setEtiquetaAmbiental(EtiquetaAmbiental etiquetaAmbiental) {
+    public void setEtiquetaAmbiental() {
         this.etiquetaAmbiental = calcularEtiqueta();
-    }
-    public EtiquetaAmbiental getEtiquetaAmbiental() {
-        return etiquetaAmbiental;
     }
 
     public EtiquetaAmbiental calcularEtiqueta() {

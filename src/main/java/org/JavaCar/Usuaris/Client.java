@@ -1,9 +1,6 @@
 package org.JavaCar.Usuaris;
 import org.JavaCar.GestorLloguers;
 import org.JavaCar.Main;
-import org.JavaCar.Vehicle;
-
-import java.util.ArrayList;
 
 import static org.JavaCar.GestorLloguers.llistaVehicles;
 
@@ -13,7 +10,7 @@ public class Client extends Usuari {
         int opcio;
 
         GestorLloguers.llistaVehiclesPerAlquilar();
-        opcio = Main.comprovarInput();
+        opcio = Main.comprovarInput(0, llistaVehicles.size());
 
         if (!llistaVehicles.get(opcio-1).isLlogat()) {
             llistaVehicles.get(opcio-1).setLlogat(true);
@@ -29,7 +26,8 @@ public class Client extends Usuari {
         System.out.println("Selecciona quin vehicle vols tornar.");
         GestorLloguers.vehiclesLlogats();
 
-        opcio = Main.comprovarInput();
+        opcio = Main.comprovarInput(0, llistaVehicles.size());
+
         if (llistaVehicles.get(opcio-1).isLlogat()){
             llistaVehicles.get(opcio-1).setLlogat(false);
             System.out.println("Has retornat el vehicle correctament");

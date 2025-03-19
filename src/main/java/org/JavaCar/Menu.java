@@ -13,7 +13,7 @@ public class Menu {
         int option;
         do {
             usuari.imprimirMenu();
-            option = Main.comprovarInput();
+            option = Main.comprovarInput(1, 3);
 
             switch (option) {
                 case 1, 2:
@@ -37,7 +37,7 @@ public class Menu {
         do {
             selectorMenus(option);
             System.out.print("Selecciona una opció: ");
-            suboption = Main.comprovarInput();
+            suboption = Main.comprovarInput(1, 3);
 
             switch (suboption) {
                 case 1:
@@ -52,7 +52,7 @@ public class Menu {
                     else System.out.println(Main.calculIngresos());
                     break;
                 case 2:
-                    if (option == 2) Main.retornarVehicle();
+                    if (option == 2) Client.retornarVehicle();
                     else menuVehicles();
                     break;
                 case 3:
@@ -76,7 +76,7 @@ public class Menu {
                     4 - Descatalogar un vehicle.
                     5 - Enrere.
                     """);
-            suboption = Main.comprovarInput();
+            suboption = Main.comprovarInput(1, 5);
 
             switch (suboption) {
                 case 1:
@@ -121,7 +121,7 @@ public class Menu {
                 7 - Any de Fabricació
                 8 - Enrere""");
 
-            suboption = Main.comprovarInput();
+            suboption = Main.comprovarInput(1, 8);
             Main.input.nextLine();
 
             switch (suboption) {

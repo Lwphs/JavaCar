@@ -1,6 +1,5 @@
 package org.JavaCar;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import static org.JavaCar.GestorLloguers.llistaVehicles;
 
@@ -12,23 +11,31 @@ public class Main {
         Menu.menuUsuari();
     }
 
-
-
     static double calculIngresos() {
         System.out.println("Quants dies s'han fet servir els cotxes?");
         int dies = input.nextInt();
         return GestorLloguers.calcularIngressosTotals(llistaVehicles, dies);
     }
 
-    public static int comprovarInput() {
-        int option = 0;
-        try {
-            option = input.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("No has introduit un numero!");
-            input.next();
-        }
-        return option;
+    public static int comprovarInput(int min, int max) {
+        int x = 0;
+        boolean correctValue = false;
+
+        do {
+            if (input.hasNextInt()) {
+                x = input.nextInt();
+                input.nextLine();
+
+                if (x < min || x > max)
+                    System.out.println("Escriu un numero entre " + min + " i " + max + "!!!!");
+                else
+                    correctValue = true;
+            } else {
+                System.out.println("Escriu un integer!!!");
+                input.nextLine();
+            }
+        } while (!correctValue);
+        return x;
     }
 
     public static void creacioVehicles() {

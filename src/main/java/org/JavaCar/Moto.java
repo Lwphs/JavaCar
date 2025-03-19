@@ -1,7 +1,6 @@
 package org.JavaCar;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Moto extends Vehicle{
     private int cilindrada;

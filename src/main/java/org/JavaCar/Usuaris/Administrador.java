@@ -18,7 +18,7 @@ public class Administrador extends Usuari {
             System.out.println(i + " - " + vehicle);
         }
         try {
-            vehicleModificar = llistaVehicles.get(Main.comprovarInput() - 1);
+            vehicleModificar = llistaVehicles.get(Main.comprovarInput(0,llistaVehicles.size()) - 1);
             Menu.menuModificar(vehicleModificar);
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Va jefe, para de liar-la.\n");
@@ -93,24 +93,24 @@ public class Administrador extends Usuari {
                 """);
         System.out.print("Quin tipus de vehicle vols afegir? ");
 
-        if (Main.comprovarInput() == 1) {
+        int eleccio = Main.comprovarInput(1,3);
+        if (eleccio == 1) {
             System.out.println("Has escollit introduir una moto.");
             return moto = new Moto();
-        } else if (Main.comprovarInput() == 2) {
+        } else if (eleccio == 2) {
             System.out.println("Has escollit introduir un cotxe.");
             return cotxe = new Cotxe();
-        } else if (Main.comprovarInput() == 3) {
+        } else {
             System.out.println("Has escollit introduir una furgoneta.");
             return furgoneta = new Furgoneta();
         }
-        return null;
     }
 
     public static void eliminarVehicle() {
         GestorLloguers.mostraVehicles();
         System.out.print("Selecciona quin vehicle vols descatalogar: ");
 
-        llistaVehicles.remove(Main.comprovarInput() - 1);
+        llistaVehicles.remove(Main.comprovarInput(0,llistaVehicles.size()) - 1);
     }
 
     @Override
