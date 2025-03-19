@@ -33,10 +33,10 @@ public class Menu {
 
     public static void submenu(int option) {
         int suboption;
+
         do {
             selectorMenus(option);
             System.out.print("Selecciona una opció: ");
-
             suboption = Main.comprovarInput();
 
             switch (suboption) {
@@ -48,7 +48,6 @@ public class Menu {
                         Client.alquilarVehicle();
                         System.out.println();
                         GestorLloguers.vehiclesLlogats();
-
                     }
                     else System.out.println(Main.calculIngresos());
                     break;

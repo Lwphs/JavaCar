@@ -86,15 +86,24 @@ public class Administrador extends Usuari {
         Cotxe cotxe;
         Furgoneta furgoneta;
 
-        System.out.print("""
-                Quin tipus de vehicle vols afegir?
+        System.out.print("""       
                 1 - Moto
                 2 - Cotxe
-                3 - Furgoneta""");
+                3 - Furgoneta
+                """);
+        System.out.print("Quin tipus de vehicle vols afegir? ");
 
-        if (Main.comprovarInput() == 1) return moto = new Moto();
-        else if (Main.comprovarInput() == 2) return cotxe = new Cotxe();
-        else return furgoneta = new Furgoneta();
+        if (Main.comprovarInput() == 1) {
+            System.out.println("Has escollit introduir una moto.");
+            return moto = new Moto();
+        } else if (Main.comprovarInput() == 2) {
+            System.out.println("Has escollit introduir un cotxe.");
+            return cotxe = new Cotxe();
+        } else if (Main.comprovarInput() == 3) {
+            System.out.println("Has escollit introduir una furgoneta.");
+            return furgoneta = new Furgoneta();
+        }
+        return null;
     }
 
     public static void eliminarVehicle() {
