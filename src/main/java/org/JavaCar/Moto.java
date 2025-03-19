@@ -10,11 +10,10 @@ public class Moto extends Vehicle{
         super(matricula, marca, model,preuBase, motor, rodes);
         this.cilindrada = cilindrada;
     }
+    public Moto() {}
 
-    public int getCilindrada() {
-
-        return cilindrada;
-    }
+    public int getCilindrada() { return cilindrada; }
+    public void setCilindrada(int cilindrada) { this.cilindrada = cilindrada; }
 
     @Override
     public double calcularPreu(int dies) {
