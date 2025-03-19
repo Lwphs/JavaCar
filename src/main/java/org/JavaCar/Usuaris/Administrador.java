@@ -26,6 +26,7 @@ public class Administrador extends Usuari {
 
     public static void afegirVehicle() {
         Vehicle vehicle = tipusVehicle();
+        Main.input.nextLine();
 
         System.out.println("Si us plau entra el nom de la Matrícula");
         String matricula = Main.input.nextLine();
@@ -45,13 +46,14 @@ public class Administrador extends Usuari {
         String tipusMotor = Main.input.nextLine();
         System.out.print("Entra la potència: ");
         int potencia = Main.input.nextInt();
+        Main.input.nextLine();
 
         Motor motor = new Motor(tipusMotor, potencia);
         vehicle.setMotor(motor);
 
         System.out.print("Si us plau, entra el tipus de rodes: ");
         String tipusRodes = Main.input.nextLine();
-        Main.input.next();
+
         System.out.print("Entra el diàmetre: ");
         double diametreRodes = Main.input.nextDouble();
 
@@ -73,6 +75,9 @@ public class Administrador extends Usuari {
 
         System.out.print("Si us plau, entra l'any de fabricació: ");
         vehicle.setAnyFabricacio(Main.input.nextInt());
+
+        vehicle.calcularEtiqueta();
+        llistaVehicles.add(vehicle);
     }
 
     private static Vehicle tipusVehicle() {
