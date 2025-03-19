@@ -45,9 +45,8 @@ public class Menu {
 
                         Main.alquilarVehicle();
                         System.out.println();
-                        System.out.println();
                         GestorLloguers.vehiclesLlogats();
-                        Main.alquilarVehicle();
+
                     }
                     else System.out.println(Main.calculIngresos());
                     break;

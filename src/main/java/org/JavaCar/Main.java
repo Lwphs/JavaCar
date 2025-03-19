@@ -16,6 +16,7 @@ public class Main {
         int opcio;
 
         GestorLloguers.llistaVehiclesPerAlquilar();
+        System.out.println();
         opcio = Main.comprovarInput();
 
         if (!llistaVehicles.get(opcio-1).isLlogat()) {
