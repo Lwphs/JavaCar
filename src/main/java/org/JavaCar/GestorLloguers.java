@@ -33,6 +33,9 @@ public class GestorLloguers {
         llistaVehicles.add(new Moto("9999XYZ", "Ducati", "Panigale V2", 27, 280, motorMoto, rodesMoto));
         llistaVehicles.add(new Cotxe("7777JKL", "Volkswagen", "Golf", 26, 5, motorCotxe, rodesCotxe));
         llistaVehicles.add(new Moto("5555MNO", "Kawasaki", "Ninja 650", 24, 290, motorMoto, rodesMoto));
+
+        llistaVehicles.get(1).setLlogat(true);
+        llistaVehicles.get(6).setLlogat(true);
     }
 
     public static void llistaVehiclesPerAlquilar() {
@@ -48,15 +51,16 @@ public class GestorLloguers {
     }
 
     public static void vehiclesLlogats() {
-        int i = 0;
+        int count = 1;
 
         for (Vehicle vehicle : llistaVehicles) {
-            i++;
             if (vehicle.isLlogat()) {
-                System.out.println(i + " " + vehicle);
+                count++;
+                System.out.println(count + " " + vehicle);
             }
         }
     }
+
 
     public static void mostraVehicles() {
         for (Vehicle vehicle : llistaVehicles) {

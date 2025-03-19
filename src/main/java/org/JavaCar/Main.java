@@ -35,8 +35,8 @@ public class Main {
         GestorLloguers.llistaVehiclesPerAlquilar();
         opcio = Main.comprovarInput();
 
-        if (!llistaVehicles.get(opcio).isLlogat()) {
-            llistaVehicles.get(opcio).setLlogat(true);
+        if (!llistaVehicles.get(opcio-1).isLlogat()) {
+            llistaVehicles.get(opcio-1).setLlogat(true);
             System.out.println("El vehículo ha sido alquilado con éxito.");
         } else {
             System.out.println("El vehículo ya está alquilado.");
@@ -50,8 +50,12 @@ public class Main {
         GestorLloguers.vehiclesLlogats();
 
         opcio = Main.comprovarInput();
-        if (llistaVehicles.get(opcio).isLlogat()){
-            llistaVehicles.get(opcio).setLlogat(false);
+        if (llistaVehicles.get(opcio-1).isLlogat()){
+            llistaVehicles.get(opcio-1).setLlogat(false);
+            System.out.println("Has retornat el vehicle correctament");
+        }
+        else{
+            System.out.println("El vehicle no està llogat");
         }
     }
 

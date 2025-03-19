@@ -41,14 +41,12 @@ public class Menu {
             switch (suboption) {
                 case 1:
                     if (option == 2){
-                        llistaVehicles.get(1).setLlogat(true);
-                        llistaVehicles.get(6).setLlogat(true);
+
 
                         Main.alquilarVehicle();
                         System.out.println();
                         System.out.println();
                         GestorLloguers.vehiclesLlogats();
-                        Main.alquilarVehicle();
                     }
                     else System.out.println(Main.calculIngresos());
                     break;
@@ -84,7 +82,6 @@ public class Menu {
                     GestorLloguers.mostraVehicles();
                     break;
                 case 2:
-
                     break;
                 case 3:
                     Main.modificarVehicle();
