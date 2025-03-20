@@ -1,8 +1,10 @@
 package org.JavaCar.Usuaris;
 import org.JavaCar.GestorLloguers;
+import org.JavaCar.LogVehicle;
 import org.JavaCar.Main;
 
 import static org.JavaCar.GestorLloguers.llistaVehicles;
+import static org.JavaCar.GestorLloguers.logsVehiclesAlquitlats;
 
 public class Client extends Usuari {
 
@@ -11,10 +13,14 @@ public class Client extends Usuari {
 
         GestorLloguers.llistaVehiclesPerAlquilar();
         opcio = Main.comprovarInput(0, llistaVehicles.size()) - 1;
+        System.out.print("Quants dies vols alquilar el vehicle?? ");
+        int dies = Main.comprovarInput(1,60);
 
         if (!llistaVehicles.get(opcio).isLlogat()) {
             llistaVehicles.get(opcio).setLlogat(true);
             System.out.println("Has alquilat " + llistaVehicles.get(opcio));
+            logsVehiclesAlquitlats.add(new LogVehicle(llistaVehicles.get(opcio), dies));
+
         } else {
             System.out.println("El vehicle ja està alquilat.");
         }

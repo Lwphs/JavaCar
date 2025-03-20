@@ -4,7 +4,7 @@ import java.util.List;
 
 public class GestorLloguers {
     public static ArrayList<Vehicle> llistaVehicles = new ArrayList<>();
-    private ArrayList<Vehicle> logsVehiclesAlquitlats = new ArrayList<>();
+    public static ArrayList<LogVehicle> logsVehiclesAlquitlats = new ArrayList<>();
 
     public static double calcularIngressosTotals(List<Vehicle> vehicles, int dies){
         double total = 0;
