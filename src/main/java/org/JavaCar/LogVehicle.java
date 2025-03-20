@@ -18,27 +18,16 @@ public class LogVehicle {
     }
 
     public double calcularPreu () {
-        if (vehicle instanceof Moto) {
-            if (((Moto) vehicle).getCilindrada() > 500) {
-                System.out.println("Preu base moto: " + vehicle.getPreuBase() + "€, extra: 5€, dies alquilar " + dies + ": total --> " + dies * (vehicle.getPreuBase() + 5) + "€.");
-                return dies * (vehicle.getPreuBase() + 5);
-            }
-            else {
-                System.out.println("Preu base moto: " + vehicle.getPreuBase() + "€, dies alquilar " + dies + ": total --> " + dies * (vehicle.getPreuBase()) + "€.");
-                return dies * vehicle.getPreuBase();
-            }
-        } else if (vehicle instanceof Furgoneta) {
-            if (((Furgoneta) vehicle).getCapacitatCarga() > 1000) {
-                System.out.println("Preu base furgoneta: " + vehicle.getPreuBase() + "€, extra: 10€, dies alquilar " + dies + ": total --> " + dies * (vehicle.getPreuBase() + 10) + "€.");
-                return dies * (vehicle.getPreuBase() + 10);
-            }
-            else {
-                System.out.println("Preu base furgoneta: " + vehicle.getPreuBase() + "€, dies alquilar " + dies + ": total --> " + dies * (vehicle.getPreuBase()) + "€.");
-                return dies * vehicle.getPreuBase();
-            }
-        } else {
-            System.out.println("Preu base cotxe: " + vehicle.getPreuBase() + "€, dies alquilar " + dies + ": total --> " + dies * (vehicle.getPreuBase()) + "€.");
-            return vehicle.getPreuBase() * dies;
+        double extra = 0;
+
+        if (vehicle instanceof Moto && ((Moto) vehicle).getCilindrada() > 500) {
+            extra = 5;
+        } else if (vehicle instanceof Furgoneta && ((Furgoneta) vehicle).getCapacitatCarga() > 1000) {
+            extra = 10;
         }
+
+        double total = dies * (vehicle.getPreuBase() + extra);
+        System.out.println("Preu base de " + vehicle.getClass().getSimpleName() + ": " + vehicle.getPreuBase() + "€, extra: " + extra + "€, dies alquilar: " + dies + ", total --> " + total + "€.");
+        return total;
     }
 }
