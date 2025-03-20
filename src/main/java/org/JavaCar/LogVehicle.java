@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class LogVehicle {
     public static ArrayList<LogVehicle> logsVehiclesAlquitlats = new ArrayList<>();
 
-    private Vehicle vehicle;
-    private int dies;
+    private final Vehicle vehicle;
+    private final int dies;
 
     public LogVehicle(Vehicle vehicle, int dies) {
         this.vehicle = vehicle;
