@@ -4,7 +4,6 @@ import org.JavaCar.LogVehicle;
 import org.JavaCar.Main;
 
 import static org.JavaCar.GestorLloguers.llistaVehicles;
-import static org.JavaCar.LogVehicle.logsVehiclesAlquitlats;
 
 public class Client extends Usuari {
 
@@ -19,8 +18,8 @@ public class Client extends Usuari {
         if (!llistaVehicles.get(opcio).isLlogat()) {
             llistaVehicles.get(opcio).setLlogat(true);
             System.out.println("Has alquilat " + llistaVehicles.get(opcio));
-            logsVehiclesAlquitlats.add(new LogVehicle(llistaVehicles.get(opcio), dies));
-            logsVehiclesAlquitlats.get(logsVehiclesAlquitlats.size() - 1).calcularPreu();
+            GestorLloguers.logsVehiclesAlquitlats.add(new LogVehicle(llistaVehicles.get(opcio), dies));
+            GestorLloguers.logsVehiclesAlquitlats.get(GestorLloguers.logsVehiclesAlquitlats.size() - 1).mostrarFactura();
         } else {
             System.out.println("El vehicle ja està alquilat.");
         }

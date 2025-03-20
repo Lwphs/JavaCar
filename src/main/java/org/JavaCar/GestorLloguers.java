@@ -4,6 +4,7 @@ import java.util.List;
 
 public class GestorLloguers {
     public static ArrayList<Vehicle> llistaVehicles = new ArrayList<>();
+    public static ArrayList<LogVehicle> logsVehiclesAlquitlats = new ArrayList<>();
 
     public static double calcularIngressosTotals(List<Vehicle> vehicles, int dies){
         double total = 0;
@@ -46,6 +47,14 @@ public class GestorLloguers {
             i ++;
             System.out.println(i + " - " + vehicle);
         }
+    }
+
+    public static double calculIngresos() {
+        double ingresos = 0;
+        for (LogVehicle vehicle : logsVehiclesAlquitlats) {
+            ingresos += vehicle.mostrarFactura();
+        }
+        return ingresos;
     }
 }
 

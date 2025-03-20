@@ -13,13 +13,6 @@ public class Roda {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-    public void setDiametre(double diametre) {
-        this.diametre = diametre;
-    }
-
     public double getDiametre() {
         return diametre;
     }

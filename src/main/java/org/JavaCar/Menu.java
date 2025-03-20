@@ -44,7 +44,7 @@ public class Menu {
                         Client.alquilarVehicle();
                         System.out.println();
                     }
-                    else System.out.println("El total d'ingresos és de " + Main.calculIngresos() + "€.");
+                    else System.out.println("El total d'ingresos és de " + GestorLloguers.calculIngresos() + "€.");
                     break;
                 case 2:
                     if (option == 2) Client.retornarVehicle();
