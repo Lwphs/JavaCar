@@ -140,20 +140,17 @@ public class Menu {
                     vehicle.setPreuBase(Main.input.nextInt());
                     break;
                 case 5:
-                    Main.input.nextLine();
                     System.out.print("Si us plau, entra el tipus de motor: ");
                     String tipusMotor = Main.input.nextLine();
                     System.out.print("Entra la potència: ");
                     int potencia = Main.input.nextInt();
 
-                    Motor motor = new Motor(tipusMotor, potencia);
-                    vehicle.setMotor(motor);
+                    vehicle.motor.setPotencia(potencia);
+                    vehicle.motor.setTipus(tipusMotor);
                     break;
                 case 6:
-                    Main.input.nextLine();
                     System.out.print("Si us plau, entra el tipus de rodes: ");
                     String tipusRodes = Main.input.nextLine();
-                    Main.input.next();
                     System.out.print("Entra el diàmetre: ");
                     double diametreRodes = Main.input.nextDouble();
 
