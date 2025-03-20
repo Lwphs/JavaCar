@@ -2,6 +2,7 @@ package org.JavaCar;
 
 import java.util.Scanner;
 import static org.JavaCar.GestorLloguers.llistaVehicles;
+import static org.JavaCar.LogVehicle.logsVehiclesAlquitlats;
 
 public class Main {
     final public static Scanner input = new Scanner(System.in);
@@ -10,12 +11,6 @@ public class Main {
         creacioVehicles();
         Menu.menuUsuari();
         input.close();
-    }
-
-    static double calculIngresos() {
-        System.out.println("Quants dies s'han fet servir els cotxes?");
-        int dies = input.nextInt();
-        return GestorLloguers.calcularIngressosTotals(llistaVehicles, dies);
     }
 
     public static int comprovarInput(int min, int max) {
@@ -61,6 +56,16 @@ public class Main {
         llistaVehicles.add(new Furgoneta("9101GHI", "Renault", "Kangoo", 110, 650, new Motor("Hibrid", 1200), rodesCotxe));
 
         llistaVehicles.get(1).setLlogat(true);
+        logsVehiclesAlquitlats.add(new LogVehicle(llistaVehicles.get(1), 5));
         llistaVehicles.get(6).setLlogat(true);
+        logsVehiclesAlquitlats.add(new LogVehicle(llistaVehicles.get(6), 2));
+    }
+
+    public static double calculIngresos() {
+        double ingresos = 0;
+        for (LogVehicle vehicle : logsVehiclesAlquitlats) {
+            ingresos += vehicle.calcularPreu();
+        }
+        return ingresos;
     }
 }
