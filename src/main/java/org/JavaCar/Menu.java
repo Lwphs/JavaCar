@@ -44,7 +44,7 @@ public class Menu {
                         Client.alquilarVehicle();
                         System.out.println();
                     }
-                    else System.out.println(Main.calculIngresos());
+                    else System.out.println(Main.calculIngresos() + " euros");
                     break;
                 case 2:
                     if (option == 2) Client.retornarVehicle();
@@ -179,6 +179,7 @@ public class Menu {
             }
             System.out.println("S'han aplicat els canvis.");
             vehicle.setEtiquetaAmbiental();
+            System.out.println(vehicle.getEtiquetaAmbiental());
         } while (suboption != 8);
     }
 }
