@@ -179,7 +179,6 @@ public class Menu {
             }
             System.out.println("S'han aplicat els canvis.");
             vehicle.setEtiquetaAmbiental();
-            System.out.println(vehicle.getEtiquetaAmbiental());
         } while (suboption != 8);
     }
 }
