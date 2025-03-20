@@ -9,6 +9,12 @@ public class Moto extends Vehicle{
         super(matricula, marca, model,preuBase, motor, rodes);
         this.cilindrada = cilindrada;
     }
+
+    public Moto(String matricula, String marca, String model, double preuBase,int cilindrada, Motor motor, Roda[] rodes, int anyFabricacio) {
+        super(matricula, marca, model, preuBase, motor, rodes, anyFabricacio);
+        this.cilindrada = cilindrada;
+    }
+
     public Moto() {}
 
     public int getCilindrada() { return cilindrada; }

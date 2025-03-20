@@ -26,7 +26,7 @@ public class LogVehicle {
             extra = 10;
         }
 
-        double total = dies * (vehicle.getPreuBase() + extra);
+        double total = vehicle.calcularPreu(dies);
         System.out.println("Preu base de " + vehicle.getClass().getSimpleName() + ": " + vehicle.getPreuBase() + "€, extra: " + extra + "€, dies alquilar: " + dies + ", total --> " + total + "€.");
         return total;
     }

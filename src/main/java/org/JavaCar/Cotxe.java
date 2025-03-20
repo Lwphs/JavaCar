@@ -10,6 +10,11 @@ public class Cotxe extends Vehicle{
         this.nombrePlaces = nombrePlaces;
     }
 
+    public Cotxe(String matricula, String marca, String model, double preuBase, int nombrePlaces, Motor motor, Roda[] rodes, int anyFabricacio) {
+        super(matricula, marca, model, preuBase, motor, rodes, anyFabricacio);
+        this.nombrePlaces = nombrePlaces;
+    }
+
     public Cotxe() {}
 
     @Override

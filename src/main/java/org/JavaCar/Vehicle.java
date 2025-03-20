@@ -12,7 +12,6 @@ public abstract class Vehicle implements Llogable {
     protected EtiquetaAmbiental etiquetaAmbiental;
     protected boolean llogat = false;
 
-
     //etiqueta Ambiental
     protected int anyFabricacio;
 
@@ -23,6 +22,17 @@ public abstract class Vehicle implements Llogable {
         this.preuBase = preuBase;
         this.motor = motor;
         this.rodes = rodes;
+        this.etiquetaAmbiental = calcularEtiqueta();
+    }
+
+    public Vehicle(String matricula, String marca, String model, double preuBase, Motor motor, Roda[] rodes, int anyFabricacio) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.model = model;
+        this.preuBase = preuBase;
+        this.motor = motor;
+        this.rodes = rodes;
+        this.anyFabricacio = anyFabricacio;
         this.etiquetaAmbiental = calcularEtiqueta();
     }
 
@@ -87,7 +97,6 @@ public abstract class Vehicle implements Llogable {
     public void setLlogat(boolean llogat) {
         this.llogat = llogat;
     }
-
 
     public void setEtiquetaAmbiental() {
         this.etiquetaAmbiental = calcularEtiqueta();
