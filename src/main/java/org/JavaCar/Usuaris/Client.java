@@ -2,15 +2,51 @@ package org.JavaCar.Usuaris;
 import org.JavaCar.GestorLloguers;
 import org.JavaCar.LogVehicle;
 import org.JavaCar.Main;
+import org.JavaCar.Vehicle;
 
-import static org.JavaCar.GestorLloguers.llistaVehicles;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import static org.JavaCar.GestorLloguers.*;
 
 public class Client extends Usuari {
 
     public static void alquilarVehicle() {
+
+        //Demanem si vol filtrar per preu o no
+        System.out.println("Vols filtrar els vehicles per preu? (1: Sí | 2: No)");
+        int filtrar = Main.comprovarInput(1, 2);
+
+
+        if (filtrar == 1) {
+            System.out.print("Introdueix el preu per al qual vols filtrar: ");
+            double preu = Main.input.nextDouble();
+            Main.input.nextLine(); // Evitar problemes d'entrada
+
+            ArrayList<Vehicle> vehiclesFiltrats = (ArrayList<Vehicle>) GestorLloguers.filtrarPerPreu(GestorLloguers.llistaVehicles, preu);
+            System.out.println("Vehicles disponibles amb un preu màxim de " + preu + "€:");
+
+            if (vehiclesFiltrats.isEmpty()) {
+                System.out.println("No hi ha vehicles disponibles en aquest rang de preus.");
+            } else {
+                int i = 0;
+                for (Vehicle v : vehiclesFiltrats) {
+                    i++;
+                    System.out.println(i + " - " + v);
+                }
+                seleccionarVehicle(vehiclesFiltrats);
+
+            }
+        }
+        else{
+            GestorLloguers.llistaVehiclesPerAlquilar();
+            seleccionarVehicle(); //falta passarli la llista de vehicles no se xd
+        }
+    }
+
+    public static void seleccionarVehicle(ArrayList<Vehicle> vehicles) {
         int opcio;
 
-        GestorLloguers.llistaVehiclesPerAlquilar();
         opcio = Main.comprovarInput(0, llistaVehicles.size()) - 1;
         System.out.print("Quants dies vols alquilar el vehicle?? ");
         int dies = Main.comprovarInput(1,60);

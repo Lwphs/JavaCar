@@ -14,7 +14,13 @@ public abstract class GestorLloguers {
     }
 
     public static List<Vehicle> filtrarPerPreu(List<Vehicle> vehicles, double preuMax) {
-        return vehicles;
+        ArrayList<Vehicle> vehiclesFiltrats = new ArrayList<>();
+        for (Vehicle vehicle : vehicles ){
+            if (vehicle.getPreuBase() <= preuMax && !vehicle.isLlogat()){
+                vehiclesFiltrats.add(vehicle);
+            }
+        }
+        return vehiclesFiltrats;
     }
 
     public static void llistaVehiclesPerAlquilar() {
