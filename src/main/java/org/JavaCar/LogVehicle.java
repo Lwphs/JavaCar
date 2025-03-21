@@ -1,6 +1,6 @@
 package org.JavaCar;
 
-public class LogVehicle extends GestorLloguers {
+public class LogVehicle {
     private final Vehicle vehicle;
     private final int dies;
 

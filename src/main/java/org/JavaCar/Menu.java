@@ -3,6 +3,8 @@ import org.JavaCar.Usuaris.Administrador;
 import org.JavaCar.Usuaris.Client;
 import org.JavaCar.Usuaris.Usuari;
 
+import java.util.Arrays;
+
 public class Menu {
 
     public static void menuUsuari() {
@@ -117,26 +119,28 @@ public class Menu {
 
             switch (suboption) {
                 case 1:
-                    Main.input.nextLine();
+                    System.out.println("Antiga matrícula: " + vehicle.getMatricula());
                     System.out.print("Si us plau, entra el nom de la Matrícula: ");
                     String matricula = Main.input.nextLine();
                     vehicle.setMatricula(matricula);
                     break;
                 case 2:
-                    Main.input.nextLine();
+                    System.out.println("Antiga marca: " + vehicle.getMarca());
                     System.out.print("Si us plau, entra el nom de la marca: ");
                     vehicle.setMarca(Main.input.nextLine());
                     break;
                 case 3:
-                    Main.input.nextLine();
+                    System.out.println("Antic model: " + vehicle.getModel());
                     System.out.print("Si us plau, entra el nom del model: ");
                     vehicle.setModel(Main.input.nextLine());
                     break;
                 case 4:
+                    System.out.println("Antic preu base: " + vehicle.getPreuBase());
                     System.out.print("Si us plau, entra un preu base del vehicle: ");
                     vehicle.setPreuBase(Main.input.nextInt());
                     break;
                 case 5:
+                    System.out.println("Antic motor: " + vehicle.getMotor());
                     System.out.print("Si us plau, entra el tipus de motor: ");
                     String tipusMotor = Main.input.nextLine();
                     System.out.print("Entra la potència: ");
@@ -146,6 +150,7 @@ public class Menu {
                     vehicle.motor.setTipus(tipusMotor);
                     break;
                 case 6:
+                    System.out.println("Antigues rodes: " + Arrays.toString(vehicle.getRodes()));
                     System.out.print("Si us plau, entra el tipus de rodes: ");
                     String tipusRodes = Main.input.nextLine();
                     System.out.print("Entra el diàmetre: ");
@@ -160,6 +165,7 @@ public class Menu {
                     vehicle.setRodes(rodes);
                     break;
                 case 7:
+                    System.out.println("Antic any de fabricació: " + vehicle.getAnyFabricacio());
                     System.out.print("Si us plau, entra l'any de fabricació: ");
                     vehicle.setAnyFabricacio(Main.input.nextInt());
                     break;

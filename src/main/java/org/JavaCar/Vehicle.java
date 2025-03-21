@@ -66,6 +66,8 @@ public abstract class Vehicle implements Llogable {
         this.anyFabricacio = anyFabricacio;
     }
 
+    public int getAnyFabricacio() { return anyFabricacio; }
+
     public String getMatricula() {
         return matricula;
     }
