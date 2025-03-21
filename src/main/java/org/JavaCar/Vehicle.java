@@ -104,8 +104,8 @@ public abstract class Vehicle implements Llogable {
 
     public EtiquetaAmbiental calcularEtiqueta() {
         if (anyFabricacio < 2000) return EtiquetaAmbiental.SenseDistintiu;
-        if (anyFabricacio > 2000 && anyFabricacio <= 2005) return EtiquetaAmbiental.B;
-        if (anyFabricacio > 2005 && anyFabricacio <= 2015) return EtiquetaAmbiental.C;
+        if (anyFabricacio > 2000 && anyFabricacio <= 2005) return EtiquetaAmbiental.C;
+        if (anyFabricacio > 2005 && anyFabricacio <= 2015) return EtiquetaAmbiental.B;
         if (motor.getTipus().equalsIgnoreCase("Hibrid") || motor.getTipus().equals("Gas") || anyFabricacio > 2015) return EtiquetaAmbiental.ECO;
         if (motor.getTipus().equalsIgnoreCase("Electric") || motor.getTipus().equalsIgnoreCase("Elèctric")) return EtiquetaAmbiental.ZeroEmisions;
 

@@ -4,14 +4,11 @@ import org.JavaCar.Usuaris.Client;
 import org.JavaCar.Usuaris.Usuari;
 
 public class Menu {
-    final static Usuari usuari = new Usuari();
-    final static Client client = new Client();
-    final static Administrador administrador = new Administrador();
 
     public static void menuUsuari() {
         int option;
         do {
-            usuari.imprimirMenu();
+            Usuari.imprimirMenu();
             option = Main.comprovarInput(1, 3);
 
             switch (option) {
@@ -97,8 +94,8 @@ public class Menu {
     }
 
     private static void selectorMenus(int option) {
-        if (option == 1) administrador.imprimirMenu();
-        if (option == 2) client.imprimirMenu();
+        if (option == 1) Administrador.imprimirMenu();
+        if (option == 2) Client.imprimirMenu();
     }
 
     public static void menuModificar(Vehicle vehicle) {

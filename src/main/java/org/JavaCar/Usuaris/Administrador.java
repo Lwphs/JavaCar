@@ -5,9 +5,8 @@ import org.JavaCar.Vehicle;
 
 import static org.JavaCar.GestorLloguers.llistaVehicles;
 
-public class Administrador extends Usuari {
+public abstract class Administrador extends Usuari {
 
-    public Administrador() { super(); }
     public static void modificarVehicle() {
         int i = 0;
         Vehicle vehicleModificar;
@@ -124,8 +123,7 @@ public class Administrador extends Usuari {
         }
     }
 
-    @Override
-    public void imprimirMenu() {
+    public static void imprimirMenu() {
         System.out.println("""
                 Has escollit Administrador.
                 1 - Calcular Ingressos Totals.

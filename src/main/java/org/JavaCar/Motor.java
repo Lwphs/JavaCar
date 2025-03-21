@@ -21,6 +21,8 @@ public class Motor {
         return tipus;
     }
 
+    public int getPotencia() { return potencia; }
+
     @Override
     public String toString() {
         return "Motor: (" +

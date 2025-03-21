@@ -42,8 +42,7 @@ public class Client extends Usuari {
         }
     }
 
-    @Override
-    public void imprimirMenu() {
+    public static void imprimirMenu() {
         System.out.println("""
                 Has escollit Client.
                 1 - Alquilar un vehicle.

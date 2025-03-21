@@ -2,7 +2,7 @@ package org.JavaCar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GestorLloguers {
+public abstract class GestorLloguers {
     public static ArrayList<Vehicle> llistaVehicles = new ArrayList<>();
     public static ArrayList<LogVehicle> logsVehiclesAlquitlats = new ArrayList<>();
 
