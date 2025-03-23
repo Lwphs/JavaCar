@@ -4,7 +4,6 @@ import org.JavaCar.LogVehicle;
 import org.JavaCar.Main;
 import org.JavaCar.Vehicle;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.JavaCar.GestorLloguers.*;
@@ -40,25 +39,26 @@ public class Client extends Usuari {
         }
         else{
             GestorLloguers.llistaVehiclesPerAlquilar();
-            seleccionarVehicle(); //falta passarli la llista de vehicles no se xd
+            seleccionarVehicle(seleccionarVehicle(GestorLloguers.llistaVehicles));
         }
     }
 
-    public static void seleccionarVehicle(ArrayList<Vehicle> vehicles) {
+    public static ArrayList<Vehicle> seleccionarVehicle(ArrayList<Vehicle> vehicles) {
         int opcio;
 
         opcio = Main.comprovarInput(0, llistaVehicles.size()) - 1;
         System.out.print("Quants dies vols alquilar el vehicle?? ");
         int dies = Main.comprovarInput(1,60);
 
-        if (!llistaVehicles.get(opcio).isLlogat()) {
-            llistaVehicles.get(opcio).setLlogat(true);
-            System.out.println("Has alquilat " + llistaVehicles.get(opcio));
-            GestorLloguers.logsVehiclesAlquitlats.add(new LogVehicle(llistaVehicles.get(opcio), dies));
+        if (!vehicles.get(opcio).isLlogat()) {
+            vehicles.get(opcio).setLlogat(true);
+            System.out.println("Has alquilat " + vehicles.get(opcio));
+            GestorLloguers.logsVehiclesAlquitlats.add(new LogVehicle(vehicles.get(opcio), dies));
             GestorLloguers.logsVehiclesAlquitlats.get(GestorLloguers.logsVehiclesAlquitlats.size() - 1).mostrarFactura();
         } else {
             System.out.println("El vehicle ja està alquilat.");
         }
+        return vehicles;
     }
 
     public static void retornarVehicle() {
