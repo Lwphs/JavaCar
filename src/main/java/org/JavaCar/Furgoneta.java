@@ -13,7 +13,6 @@ public class Furgoneta extends Vehicle {
         super(matricula, marca, model, preuBase, motor, rodes);
         this.capacitatCarga = capacitatCarga;
     }
-    public Furgoneta() {}
 
     public void setCapacitatCarga(double capacitatCarga) { this.capacitatCarga = capacitatCarga; }
     public double getCapacitatCarga() {

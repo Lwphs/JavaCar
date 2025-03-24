@@ -15,7 +15,6 @@ public class Cotxe extends Vehicle{
         this.nombrePlaces = nombrePlaces;
     }
 
-    public Cotxe() {}
 
     @Override
     public double calcularPreu(int dies) {

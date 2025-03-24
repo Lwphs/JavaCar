@@ -36,8 +36,7 @@ public abstract class Vehicle implements Llogable {
         this.etiquetaAmbiental = calcularEtiqueta();
     }
 
-    public Vehicle() {}
-
+    // ======= Getters i Setters =======
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
@@ -104,6 +103,10 @@ public abstract class Vehicle implements Llogable {
         this.etiquetaAmbiental = calcularEtiqueta();
     }
 
+    /**
+     * Calcula l'etiqueta ambiental en funció de l'any de fabricació i el tipus de motor.
+     * @return
+     */
     public EtiquetaAmbiental calcularEtiqueta() {
         if (anyFabricacio < 2000) return EtiquetaAmbiental.SenseDistintiu;
         if (anyFabricacio > 2000 && anyFabricacio <= 2005) return EtiquetaAmbiental.C;
