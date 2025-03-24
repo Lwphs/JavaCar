@@ -7,6 +7,10 @@ import static org.JavaCar.GestorLloguers.llistaVehicles;
 
 public abstract class Administrador extends Usuari {
 
+    /**
+     * Permet a l'administrador modificar les propietats d'un vehicle existent.
+     * Mostra la llista de vehicles disponibles i permet seleccionar un vehicle per modificar-lo.
+     */
     public static void modificarVehicle() {
         int i = 0;
         Vehicle vehicleModificar;
@@ -25,6 +29,10 @@ public abstract class Administrador extends Usuari {
         }
     }
 
+    /**
+     * Permet a l'administrador afegir un nou vehicle a la flota.
+     * Demana a l'administrador les propietats del vehicle i el crea.
+     */
     public static void afegirVehicle() {
         Vehicle vehicle = tipusVehicle();
 
@@ -80,6 +88,10 @@ public abstract class Administrador extends Usuari {
         llistaVehicles.add(vehicle);
     }
 
+    /**
+     * Demana a l'administrador quin tipus de vehicle vol afegir (Moto, Cotxe, Furgoneta).
+     * @return El vehicle creat segons el tipus seleccionat.
+     */
     private static Vehicle tipusVehicle() {
         Moto moto;
         Cotxe cotxe;
@@ -109,6 +121,10 @@ public abstract class Administrador extends Usuari {
         };
     }
 
+    /**
+     * Permet a l'administrador eliminar un vehicle de la flota.
+     * Elimina un vehicle de la llista si no està llogat.
+     */
     public static void eliminarVehicle() {
         GestorLloguers.mostraVehicles();
         System.out.print("Selecciona quin vehicle vols descatalogar: ");
