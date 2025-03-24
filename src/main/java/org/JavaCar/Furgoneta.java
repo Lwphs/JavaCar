@@ -19,6 +19,12 @@ public class Furgoneta extends Vehicle {
         return capacitatCarga;
     }
 
+    /**
+     * Calcula el preu del lloguer de la furgoneta en funció dels dies.
+     * S'aplica un suplement extra depenent de la capacitat de càrrega de la furgoneta.
+     * @param dies Nombre de dies de lloguer.
+     * @return Preu total del lloguer.
+     */
     @Override
     public double calcularPreu(int dies) {
         if (capacitatCarga > 1000) return dies * (preuBase + 10);

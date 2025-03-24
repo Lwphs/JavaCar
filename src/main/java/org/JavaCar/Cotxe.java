@@ -15,7 +15,12 @@ public class Cotxe extends Vehicle{
         this.nombrePlaces = nombrePlaces;
     }
 
-
+    /**
+     * Calcula el preu del lloguer del cotxe en funció dels dies.
+     * No s'aplica cap suplement addicional.
+     * @param dies Nombre de dies de lloguer.
+     * @return Preu total del lloguer.
+     */
     @Override
     public double calcularPreu(int dies) {
         return preuBase * dies;

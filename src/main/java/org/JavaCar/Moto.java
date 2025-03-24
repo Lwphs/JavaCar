@@ -19,6 +19,12 @@ public class Moto extends Vehicle{
     public int getCilindrada() { return cilindrada; }
     public void setCilindrada(int cilindrada) { this.cilindrada = cilindrada; }
 
+    /**
+     * Calcula el preu del lloguer de la moto en funció dels dies i la cilindrada.
+     * Si la moto té més de 500cc, s'afegeix un suplement de 5€/dia.
+     * @param dies Nombre de dies de lloguer.
+     * @return Preu total del lloguer.
+     */
     @Override
     public double calcularPreu(int dies) {
         if (cilindrada > 500)
