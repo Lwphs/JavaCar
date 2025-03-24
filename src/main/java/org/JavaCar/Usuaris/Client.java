@@ -10,6 +10,10 @@ import static org.JavaCar.GestorLloguers.*;
 
 public class Client extends Usuari {
 
+    /**
+     * Permet al client alquilar un vehicle, amb la possibilitat de filtrar per preu.
+     * Demana si vol filtrar els vehicles per preu i mostra les opcions disponibles.
+     */
     public static void alquilarVehicle() {
 
         //Demanem si vol filtrar per preu o no
@@ -25,6 +29,7 @@ public class Client extends Usuari {
             ArrayList<Vehicle> vehiclesFiltrats = (ArrayList<Vehicle>) GestorLloguers.filtrarPerPreu(GestorLloguers.llistaVehicles, preu);
             System.out.println("Vehicles disponibles amb un preu màxim de " + preu + "€:");
 
+            // Filtra els vehicles per preu i mostra'ls
             if (vehiclesFiltrats.isEmpty()) {
                 System.out.println("No hi ha vehicles disponibles en aquest rang de preus.");
             } else {
@@ -33,16 +38,24 @@ public class Client extends Usuari {
                     i++;
                     System.out.println(i + " - " + v);
                 }
+                // Permet seleccionar un vehicle de la llista filtrada
                 seleccionarVehicle(vehiclesFiltrats);
 
             }
         }
         else{
+            // Mostra tots els vehicles disponibles per alquilar
             GestorLloguers.llistaVehiclesPerAlquilar();
             seleccionarVehicle(seleccionarVehicle(GestorLloguers.llistaVehicles));
         }
     }
 
+    /**
+     * Permet al client seleccionar un vehicle de la llista de vehicles disponibles.
+     * També sol·licita el nombre de dies per a llogar-lo i afegeix el vehicle als logs de lloguer.
+     * @param vehicles Llista de vehicles disponibles per llogar.
+     * @return Llista de vehicles, possiblement actualitzada.
+     */
     public static ArrayList<Vehicle> seleccionarVehicle(ArrayList<Vehicle> vehicles) {
         int opcio;
 
@@ -61,6 +74,10 @@ public class Client extends Usuari {
         return vehicles;
     }
 
+    /**
+     * Permet al client retornar un vehicle llogat.
+     * Sol·licita al client que esculli quin vehicle vol retornar i actualitza el seu estat.
+     */
     public static void retornarVehicle() {
         int opcio;
 
