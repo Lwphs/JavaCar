@@ -4,14 +4,23 @@ import java.util.Scanner;
 import static org.JavaCar.GestorLloguers.llistaVehicles;
 
 public class Main {
+
+    // Scanner estàtic per rebre entrades de l'usuari durant tota l'execució del programa
     final public static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        creacioVehicles();
-        Menu.menuUsuari();
-        input.close();
+        creacioVehicles(); //Cridem al mètode per instanciar vehicles
+        Menu.menuUsuari(); //Es crida a la classe menú per printejar els menus.
+        input.close(); //Tanca el programa.
     }
 
+    /**
+     * Comprova que l'entrada de l'usuari sigui un enter dins d'un rang específic.
+     * Si l'usuari introdueix un valor invàlid, es torna a demanar fins que sigui correcte.
+     * @param min Valor mínim acceptable.
+     * @param max Valor màxim acceptable.
+     * @return Enter dins del rang especificat.
+     */
     public static int comprovarInput(int min, int max) {
         int x = 0;
         boolean correctValue = false;
@@ -33,6 +42,10 @@ public class Main {
         return x;
     }
 
+    /**
+     * Crea i afegeix vehicles a la llista de vehicles del sistema.
+     * També afegeix alguns vehicles a la llista de vehicles llogats per simular un escenari real.
+     */
     public static void creacioVehicles() {
         Roda[] rodesCotxe = {new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17)};
         Roda[] rodesMoto = {new Roda("Michelin", 17), new Roda("Michelin", 17)};
