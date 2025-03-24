@@ -36,6 +36,8 @@ public abstract class Vehicle implements Llogable {
         this.etiquetaAmbiental = calcularEtiqueta();
     }
 
+    public Vehicle(){}
+
     // ======= Getters i Setters =======
     public void setMatricula(String matricula) {
         this.matricula = matricula;

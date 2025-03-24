@@ -15,6 +15,8 @@ public class Cotxe extends Vehicle{
         this.nombrePlaces = nombrePlaces;
     }
 
+    public Cotxe(){}
+
     /**
      * Calcula el preu del lloguer del cotxe en funció dels dies.
      * No s'aplica cap suplement addicional.

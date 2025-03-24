@@ -15,6 +15,7 @@ public class Moto extends Vehicle{
         this.cilindrada = cilindrada;
     }
 
+    public Moto(){}
 
     public int getCilindrada() { return cilindrada; }
     public void setCilindrada(int cilindrada) { this.cilindrada = cilindrada; }
