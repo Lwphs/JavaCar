@@ -67,7 +67,7 @@ public class Menu {
     }
 
     /**
-     *
+     * Mostra i gestiona el menú de gestió de vehicles.
      */
     private static void menuVehicles() {
         int suboption;
@@ -80,23 +80,23 @@ public class Menu {
                     4 - Descatalogar un vehicle.
                     5 - Enrere.""");
             System.out.print("Selecciona una opció: ");
-            suboption = Main.comprovarInput(1, 5);
+            suboption = Main.comprovarInput(1, 5); //Control d'errors
 
             switch (suboption) {
                 case 1:
-                    GestorLloguers.mostraVehicles();
+                    GestorLloguers.mostraVehicles(); //Mostra tots els vehicles disponibles
                     break;
                 case 2:
-                    Administrador.afegirVehicle();
+                    Administrador.afegirVehicle(); //Permet a l'administrador afegir un nou vehicle
                     break;
                 case 3:
-                    Administrador.modificarVehicle();
+                    Administrador.modificarVehicle(); //Permet a l'administrador modificar un vehicle existent
                     break;
                 case 4:
-                    Administrador.eliminarVehicle();
+                    Administrador.eliminarVehicle(); //Permet a l'administrador eliminar un vehicle
                     break;
                 case 5:
-                    System.out.println();
+                    System.out.println(); //Torna al menú anterior
                     break;
                 default:
                     System.out.println("Si us plau, introdueix una de les opcions anteriors.\n");
@@ -105,11 +105,19 @@ public class Menu {
         } while (suboption != 5);
     }
 
+    /**
+     * Mostra el menú adequat segons el tipus d'usuari seleccionat.
+     * @param option Opció seleccionada (1 = Administrador, 2 = Client).
+     */
     private static void selectorMenus(int option) {
         if (option == 1) Administrador.imprimirMenu();
         if (option == 2) Client.imprimirMenu();
     }
 
+    /**
+     * Permet modificar els atributs d'un vehicle.
+     * @param vehicle Objecte Vehicle a modificar.
+     */
     public static void menuModificar(Vehicle vehicle) {
         int suboption;
 
@@ -125,7 +133,7 @@ public class Menu {
                 8 - Enrere""");
 
             System.out.print("Què vols modificar? ");
-            suboption = Main.comprovarInput(1, 8);
+            suboption = Main.comprovarInput(1, 8); //Control d'errors
 
             switch (suboption) {
                 case 1:
@@ -169,9 +177,9 @@ public class Menu {
                     Roda roda = new Roda(tipusRodes, diametreRodes);
                     Roda[] rodes;
                     if (vehicle instanceof Moto)
-                        rodes = new Roda[]{roda, roda};
+                        rodes = new Roda[]{roda, roda}; //Assignem 2 rodes a les motos
                     else
-                        rodes = new Roda[]{roda, roda, roda, roda};
+                        rodes = new Roda[]{roda, roda, roda, roda}; //Assignem 4 rodes als cotxes
                     vehicle.setRodes(rodes);
                     break;
                 case 7:
@@ -179,7 +187,7 @@ public class Menu {
                     System.out.print("Si us plau, entra l'any de fabricació: ");
                     vehicle.setAnyFabricacio(Main.input.nextInt());
                     break;
-                case 8:
+                case 8: //Tornem al menú anterior
                     break;
                 default:
                     System.out.println("""
@@ -188,7 +196,7 @@ public class Menu {
                     break;
             }
             System.out.println("S'han aplicat els canvis.");
-            vehicle.setEtiquetaAmbiental();
+            vehicle.setEtiquetaAmbiental(); //Es crida a la funció que calcula l'etiqueta ambiental.
         } while (suboption != 8);
     }
 }
