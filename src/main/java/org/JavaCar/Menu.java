@@ -3,19 +3,24 @@ import org.JavaCar.Usuaris.Administrador;
 import org.JavaCar.Usuaris.Client;
 import org.JavaCar.Usuaris.Usuari;
 
-import java.util.Arrays;
-
 public class Menu {
+    //Creació d'instàncies d'usuaris
+    final static Usuari usuari = new Usuari();
+    final static Client client = new Client();
+    final static Administrador administrador = new Administrador();
 
+    /**
+     * Aquest mètode mostrem el menú dels usuaris.
+     */
     public static void menuUsuari() {
         int option;
         do {
-            Usuari.imprimirMenu();
-            option = Main.comprovarInput(1, 3);
+            usuari.imprimirMenu();
+            option = Main.comprovarInput(1, 3); //Control d'errors de l'input
 
             switch (option) {
                 case 1, 2:
-                    submenu(option);
+                    submenu(option); //Accedeix al submenú segons l'opció escollida
                     break;
                 case 3:
                     System.out.println("Sortint . . .");
@@ -29,11 +34,15 @@ public class Menu {
         } while (option != 3);
     }
 
+    /**
+     * Mètode per mostrar el submenú
+     * @param option defineix quina informació mostrarà el submenú.
+     */
     public static void submenu(int option) {
         int suboption;
 
         do {
-            selectorMenus(option);
+            selectorMenus(option); //Mètode on li passem el paràmetre de "option"
             System.out.print("Selecciona una opció: ");
             suboption = Main.comprovarInput(1, 3);
 
@@ -95,9 +104,13 @@ public class Menu {
         } while (suboption != 5);
     }
 
+    /**
+     * Segons la opció introduida per paràmetre mostra un menú o un altre.
+     * @param option Serveix per decidir quin menú mostrar.
+     */
     private static void selectorMenus(int option) {
-        if (option == 1) Administrador.imprimirMenu();
-        if (option == 2) Client.imprimirMenu();
+        if (option == 1) administrador.imprimirMenu();
+        if (option == 2) client.imprimirMenu();
     }
 
     public static void menuModificar(Vehicle vehicle) {
@@ -119,28 +132,26 @@ public class Menu {
 
             switch (suboption) {
                 case 1:
-                    System.out.println("Antiga matrícula: " + vehicle.getMatricula());
+                    Main.input.nextLine();
                     System.out.print("Si us plau, entra el nom de la Matrícula: ");
                     String matricula = Main.input.nextLine();
                     vehicle.setMatricula(matricula);
                     break;
                 case 2:
-                    System.out.println("Antiga marca: " + vehicle.getMarca());
+                    Main.input.nextLine();
                     System.out.print("Si us plau, entra el nom de la marca: ");
                     vehicle.setMarca(Main.input.nextLine());
                     break;
                 case 3:
-                    System.out.println("Antic model: " + vehicle.getModel());
+                    Main.input.nextLine();
                     System.out.print("Si us plau, entra el nom del model: ");
                     vehicle.setModel(Main.input.nextLine());
                     break;
                 case 4:
-                    System.out.println("Antic preu base: " + vehicle.getPreuBase());
                     System.out.print("Si us plau, entra un preu base del vehicle: ");
                     vehicle.setPreuBase(Main.input.nextInt());
                     break;
                 case 5:
-                    System.out.println("Antic motor: " + vehicle.getMotor());
                     System.out.print("Si us plau, entra el tipus de motor: ");
                     String tipusMotor = Main.input.nextLine();
                     System.out.print("Entra la potència: ");
@@ -150,7 +161,6 @@ public class Menu {
                     vehicle.motor.setTipus(tipusMotor);
                     break;
                 case 6:
-                    System.out.println("Antigues rodes: " + Arrays.toString(vehicle.getRodes()));
                     System.out.print("Si us plau, entra el tipus de rodes: ");
                     String tipusRodes = Main.input.nextLine();
                     System.out.print("Entra el diàmetre: ");
@@ -165,7 +175,6 @@ public class Menu {
                     vehicle.setRodes(rodes);
                     break;
                 case 7:
-                    System.out.println("Antic any de fabricació: " + vehicle.getAnyFabricacio());
                     System.out.print("Si us plau, entra l'any de fabricació: ");
                     vehicle.setAnyFabricacio(Main.input.nextInt());
                     break;
