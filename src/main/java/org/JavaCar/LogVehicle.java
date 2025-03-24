@@ -9,6 +9,12 @@ public class LogVehicle {
         this.dies = dies;
     }
 
+    /**
+     * Calcula i mostra la factura per al vehicle llogat, tenint en compte possibles càrrecs addicionals.
+     * Si el vehicle és una moto amb més de 500 cilindrades o una furgoneta amb capacitat de càrrega superior a 1000,
+     * es cobra un extra.
+     * @return El total a pagar pel lloguer del vehicle.
+     */
     public double mostrarFactura() {
         double extra = 0;
 

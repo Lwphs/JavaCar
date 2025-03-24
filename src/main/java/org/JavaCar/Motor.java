@@ -9,6 +9,8 @@ public class Motor {
         this.potencia = potencia;
     }
 
+
+    // ===== GETTERS I SETTERS ======
     public void setTipus(String tipus) {
         this.tipus = tipus;
     }

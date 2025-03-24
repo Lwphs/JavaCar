@@ -9,6 +9,8 @@ public class Roda {
         this.diametre = diametre;
     }
 
+
+    // ===== GETTERS I SETTERS ======
     public String getMarca() {
         return marca;
     }
