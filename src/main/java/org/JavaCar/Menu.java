@@ -7,15 +7,18 @@ import java.util.Arrays;
 
 public class Menu {
 
+    /**
+     * Mostra el menú principal de l'usuari i gestiona les opcions seleccionades.
+     */
     public static void menuUsuari() {
         int option;
         do {
-            Usuari.imprimirMenu();
-            option = Main.comprovarInput(1, 3);
+            Usuari.imprimirMenu(); //Mostra el menú principal de l'usuari.
+            option = Main.comprovarInput(1, 3); //Llegeix una opció valida de l'1 al 3 i fa el control d'errors.
 
             switch (option) {
                 case 1, 2:
-                    submenu(option);
+                    submenu(option); //Crida al mètode per ensenyar el submenú en base a una opció.
                     break;
                 case 3:
                     System.out.println("Sortint . . .");
@@ -29,28 +32,32 @@ public class Menu {
         } while (option != 3);
     }
 
+    /**
+     * Mostra el submenú corresponent segons el tipus d'usuari seleccionat.
+     * @param option Opció amb la qual el programa sap quin menú ensenyar.
+     */
     public static void submenu(int option) {
         int suboption;
 
         do {
             selectorMenus(option);
             System.out.print("Selecciona una opció: ");
-            suboption = Main.comprovarInput(1, 3);
+            suboption = Main.comprovarInput(1, 3); //Control d'errors
 
             switch (suboption) {
                 case 1:
                     if (option == 2){
-                        Client.alquilarVehicle();
+                        Client.alquilarVehicle(); //Crida al mètode per llogar un vehicle
                         System.out.println();
                     }
-                    else System.out.println("El total d'ingresos és de " + GestorLloguers.calculIngresos() + "€.");
+                    else System.out.println("El total d'ingresos és de " + GestorLloguers.calculIngresos() + "€."); //Crida el mètode per calcular els ingresos totals.
                     break;
                 case 2:
-                    if (option == 2) Client.retornarVehicle();
+                    if (option == 2) Client.retornarVehicle(); //Crida el mètode per retornar un vehicle.
                     else menuVehicles();
                     break;
                 case 3:
-                    System.out.println();
+                    System.out.println(); //Torna al menú principal.
                     break;
                 default:
                     System.out.println("Si us plau, introdueix una de les opcions anteriors.\n");
@@ -59,6 +66,9 @@ public class Menu {
         } while (suboption != 3);
     }
 
+    /**
+     *
+     */
     private static void menuVehicles() {
         int suboption;
 
