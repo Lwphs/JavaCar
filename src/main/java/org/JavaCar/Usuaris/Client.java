@@ -11,7 +11,7 @@ import static org.JavaCar.GestorLloguers.*;
 public class Client extends Usuari {
 
     /**
-     * Permet al client alquilar un vehicle, amb la possibilitat de filtrar per preu.
+     * Permet al client llogar un vehicle, amb la possibilitat de filtrar per preu.
      * Demana si vol filtrar els vehicles per preu i mostra les opcions disponibles.
      */
     public static void alquilarVehicle() {
@@ -44,9 +44,9 @@ public class Client extends Usuari {
             }
         }
         else{
-            // Mostra tots els vehicles disponibles per alquilar
+            // Mostra tots els vehicles disponibles per llogar
             GestorLloguers.llistaVehiclesPerAlquilar();
-            seleccionarVehicle(seleccionarVehicle(GestorLloguers.llistaVehicles));
+            seleccionarVehicle(GestorLloguers.llistaVehicles);
         }
     }
 
@@ -54,9 +54,8 @@ public class Client extends Usuari {
      * Permet al client seleccionar un vehicle de la llista de vehicles disponibles.
      * També sol·licita el nombre de dies per a llogar-lo i afegeix el vehicle als logs de lloguer.
      * @param vehicles Llista de vehicles disponibles per llogar.
-     * @return Llista de vehicles, possiblement actualitzada.
      */
-    public static ArrayList<Vehicle> seleccionarVehicle(ArrayList<Vehicle> vehicles) {
+    public static void seleccionarVehicle(ArrayList<Vehicle> vehicles) {
         int opcio;
 
         opcio = Main.comprovarInput(0, llistaVehicles.size()) - 1;
@@ -71,7 +70,6 @@ public class Client extends Usuari {
         } else {
             System.out.println("El vehicle ja està alquilat.");
         }
-        return vehicles;
     }
 
     /**
